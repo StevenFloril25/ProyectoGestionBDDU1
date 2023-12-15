@@ -4,10 +4,10 @@ class Cconexion{
 
     function ConexionBD(){
 
-        $host='Steven';
+        $host='localhost';
         $dbname='ProyectoGestionBDDu1';
         $username='sa';
-        $pasword ='datos';
+        $pasword ='1234';
         $puerto=1433;
 
 
