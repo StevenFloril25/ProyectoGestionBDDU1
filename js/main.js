@@ -83,8 +83,8 @@
     });
 
 
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
+    // matriculass carousel
+    $(".matriculas-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1000,
         center: true,

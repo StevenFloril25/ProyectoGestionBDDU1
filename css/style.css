@@ -5,6 +5,8 @@
     --dark: #181d38;
 }
 
+
+
 .fw-medium {
     font-weight: 600 !important;
 }
@@ -272,7 +274,7 @@
 }
 
 
-/*** Categories & Courses ***/
+/*** Categories & cursos ***/
 .category img,
 .course-item img {
     transition: .5s;
@@ -284,18 +286,18 @@
 }
 
 
-/*** Team ***/
-.team-item img {
+/*** guias ***/
+.guias-item img {
     transition: .5s;
 }
 
-.team-item:hover img {
+.guias-item:hover img {
     transform: scale(1.1);
 }
 
 
-/*** Testimonial ***/
-.testimonial-carousel::before {
+/*** matriculas ***/
+.matriculas-carousel::before {
     position: absolute;
     content: "";
     top: 0;
@@ -306,7 +308,7 @@
     z-index: 1;
 }
 
-.testimonial-carousel::after {
+.matriculas-carousel::after {
     position: absolute;
     content: "";
     top: 0;
@@ -318,40 +320,40 @@
 }
 
 @media (min-width: 768px) {
-    .testimonial-carousel::before,
-    .testimonial-carousel::after {
+    .matriculas-carousel::before,
+    .matriculas-carousel::after {
         width: 200px;
     }
 }
 
 @media (min-width: 992px) {
-    .testimonial-carousel::before,
-    .testimonial-carousel::after {
+    .matriculas-carousel::before,
+    .matriculas-carousel::after {
         width: 300px;
     }
 }
 
-.testimonial-carousel .owl-item .testimonial-text,
-.testimonial-carousel .owl-item.center .testimonial-text * {
+.matriculas-carousel .owl-item .matriculas-text,
+.matriculas-carousel .owl-item.center .matriculas-text * {
     transition: .5s;
 }
 
-.testimonial-carousel .owl-item.center .testimonial-text {
+.matriculas-carousel .owl-item.center .matriculas-text {
     background: var(--primary) !important;
 }
 
-.testimonial-carousel .owl-item.center .testimonial-text * {
+.matriculas-carousel .owl-item.center .matriculas-text * {
     color: #FFFFFF !important;
 }
 
-.testimonial-carousel .owl-dots {
+.matriculas-carousel .owl-dots {
     margin-top: 24px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
 
-.testimonial-carousel .owl-dot {
+.matriculas-carousel .owl-dot {
     position: relative;
     display: inline-block;
     margin: 0 5px;
@@ -361,7 +363,7 @@
     transition: .5s;
 }
 
-.testimonial-carousel .owl-dot.active {
+.matriculas-carousel .owl-dot.active {
     background: var(--primary);
     border-color: var(--primary);
 }
