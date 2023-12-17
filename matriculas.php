@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -36,25 +36,30 @@
 <body>
     <?php
     include_once("conexion.php");
-    // Crea una instancia de la clase Cconexion
+
     $conexion = new Cconexion();
-    // Llama al método ConexionBD en la instancia creada
-    $conexion->ConexionBD();
+    $conexionBD = $conexion->ConexionBD();
 
     // Tu consulta SQL
     $consulta = "SELECT * FROM datosNiños";
 
     // Ejecutar la consulta
-    $resultado = sqlsrv_query($Cconexion, $consulta);
+    $resultado = $conexionBD->query($consulta);
+
+    // Verificar si la consulta fue exitosa
+    if ($resultado === false) {
+        die(print_r($conexionBD->errorInfo(), true));
+    }
+
     ?>
-    
+
     <!-- Spinner Start -->
-    <div id="spinner"
+    <!-- <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
-    </div>
+    </div> -->
     <!-- Spinner End -->
 
 
@@ -101,7 +106,7 @@
             </div>
 
             <!-- Formulario Matricula -->
-            <form id="persona-form" action="registro.php" method="POST" class="col-md-6 mx-auto">
+            <form id="persona-form" action="matriculasCRUD.php" method="POST" class="col-md-6 mx-auto">
 
                 <h3 class="text-center"></h3>
 
@@ -181,14 +186,14 @@
         <span id="mensaje-error-edad"></span>
 
         <div class="mb-3 text-center">
-            <button type="button" class="btn btn-info text-white m-2">Agregar</button>
+            <button type="submit" class="btn btn-info text-white m-2">Agregar</button>
             <button type="button" class="btn btn-info text-white m-2">Editar</button>
             <button type="button" class="btn btn-info text-white m-2">Eliminar</button>
         </div>
         </form>
 
         <!-- Mostrar los datos en la tabla -->
-        <table id="tabla-personas">
+        <table id="tabla-personas" class="table table-striped">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -202,23 +207,26 @@
                 </tr>
             </thead>
             <tbody id="personas-list">
-                <?php
-                while ($columna = mysqli_fetch_assoc($resultado)) {
-                    echo "<tr>";
-                    echo "<td>" . $columna['Nombre'] . "</td>";
-                    echo "<td>" . $columna['Apellido'] . "</td>";
-                    echo "<td>" . $columna['Edad'] . "</td>";
-                    echo "<td>" . $columna['Telefono familiar'] . "</td>";
-                    echo "<td>" . $columna['Sacramento'] . "</td>";
-                    echo "<td>" . $columna['Catequista'] . "</td>";
-                    echo "<td>" . $columna['Horarios'] . "</td>";
-                    echo "<td>" . $columna['Iglesia'] . "</td>";
-                    echo "</tr>";
-                }
-                ?>
+            <?php
+        if ($resultado !== false) {
+            while ($columna = $resultado->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr>";
+                echo "<td>" . $columna['NombreNiño'] . "</td>";
+                echo "<td>" . $columna['ApellidoNiño'] . "</td>";
+                echo "<td>" . $columna['EdadNiño'] . "</td>";
+                echo "<td>" . $columna['TelefonoFamiliar'] . "</td>";
+                echo "<td>" . $columna['Sacramento'] . "</td>";
+                echo "<td>" . $columna['NombreCatequista'] . "</td>";
+                echo "<td>" . $columna['Horarios'] . "</td>";
+                echo "<td>" . $columna['NombreIglesia'] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='8'>No se encontraron datos</td></tr>";
+        }
+        ?>
             </tbody>
         </table>
-
         <!-- matriculas End -->
 
 
@@ -248,7 +256,6 @@
 
 </html>
 
-
 <?php
-$conn->close();
+$conexionBD = null;
 ?>
