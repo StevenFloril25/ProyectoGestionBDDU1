@@ -9,10 +9,10 @@ class Cconexion {
 
     // Constructor para inicializar los datos de conexión
     public function __construct() {
-        $this->serverName = 'localhost';
+        $this->serverName = 'Steven';
         $this->dbName = 'ProyectoGestionBDDu1';
         $this->userName = 'sa';
-        $this->password = '1234';
+        $this->password = 'datos';
     }
 
     // Método para establecer la conexión a la base de datos
