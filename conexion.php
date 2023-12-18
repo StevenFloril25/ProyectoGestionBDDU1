@@ -1,12 +1,16 @@
 <?php
 
-
 class Cconexion {
-    private $serverName;
-    private $dbName;
-    private $userName;
-    private $password;
 
+<<<<<<< HEAD
+   public static function ConexionBD() {
+
+        $host = 'localhost';
+        $dbname = 'ProyectoGestionBDDu1';
+        $username = 'sa';
+        $pasword = '1234';
+        $puerto = 1433;
+=======
     // Constructor para inicializar los datos de conexión
     public function __construct() {
         $this->serverName = 'Steven';
@@ -14,23 +18,17 @@ class Cconexion {
         $this->userName = 'sa';
         $this->password = 'datos';
     }
+>>>>>>> 3b2eb00cc873331a90daa9b8defa4b5cbb245ec8
 
-    // Método para establecer la conexión a la base de datos
-    public function ConexionBD() {
         try {
-            // Crear una nueva instancia de la clase PDO para establecer la conexión
-            $conn = new PDO("sqlsrv:Server=$this->serverName;Database=$this->dbName", $this->userName, $this->password);
-    
-            // Configurar el modo de error para que PDO lance excepciones en lugar de advertencias
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-            // Devolver la conexión establecida
-            return $conn;
-        } catch (PDOException $e) {
-            // En caso de error al conectar, imprimir un mensaje de error y terminar el script
-            die("Error de conexión: " . $e->getMessage());
+            $conn = new PDO("sqlsrv:Server=$host,$puerto;Database=$dbname", $username, $pasword);
+            echo "";
+        } catch (PDOException $exp) {
+            echo "No se logró conectar correctamente con la base de datos: $dbname, error: $exp";
         }
-    }
-}
 
+        return $conn;
+    }
+
+}
 ?>
