@@ -60,8 +60,7 @@
                 <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
             </div>
             <a href="asistencia.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">ASISTENCIA</a>
-
-            <a href="../crudNiños/matriculas.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">MATRÍCULAS</a>
+            <a href="matriculas.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">MATRÍCULAS</a>
         </div>
     </nav>
     <!-- Navbar End -->
