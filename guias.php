@@ -66,7 +66,6 @@
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
                 <a href="vista.php" class="nav-item nav-link">Vista</a>
-
             </div>
             <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">CATEQUISTA</a>
 
