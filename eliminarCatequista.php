@@ -3,6 +3,9 @@ include_once "conexion.php";
 
 function eliminarCatequista($idCatequista)
 {
+    $mensajeExito = '';
+    $mensajeError = '';
+
     try {
         $conexion = Cconexion::ConexionBD();
 
@@ -11,7 +14,7 @@ function eliminarCatequista($idCatequista)
         }
 
         // Mensaje de depuración
-        echo "<script>alert('Eliminando catequista con ID: " . $idCatequista . "');</script>";
+        $mensajeExito = "Eliminando catequista con ID: " . $idCatequista;
 
         $sql = "EXEC EliminarCatequista @IdCatequista=?";
         $stmt = $conexion->prepare($sql);
@@ -21,28 +24,27 @@ function eliminarCatequista($idCatequista)
         $rowCount = $stmt->rowCount();
 
         if ($rowCount > 0) {
-            echo "<script>
-                    alert('Registro de Catequista eliminado correctamente.');
-                    window.location.href = 'catequista.php'; // Redirige a la página de catequistas
-                  </script>";
+            $mensajeExito = "Registro de Catequista eliminado correctamente.";
         } else {
-            echo "<script>
-                    alert('No se encontró el registro de Catequista para eliminar.');
-                    window.location.href = 'catequista.php'; // Redirige a la página de catequistas
-                  </script>";
+            $mensajeError = "";
         }
 
     } catch (PDOException $e) {
-        echo "<script>
-                alert('Error al ejecutar la consulta: " . $e->getMessage() . "');
-                window.location.href = 'catequista.php';
-              </script>";
+        $mensajeError = "Error al ejecutar la consulta: " . $e->getMessage();
     } catch (Exception $e) {
-        echo "<script>
-                alert('Error: " . $e->getMessage() . "');
-                window.location.href = 'catequista.php';
-              </script>";
+        $mensajeError = "Error: " . $e->getMessage();
     }
+
+    // Mostrar mensajes al final del script
+    echo "<script>";
+    if ($mensajeExito !== '') {
+        echo "alert('$mensajeExito');";
+    }
+    if ($mensajeError !== '') {
+        echo "alert('$mensajeError');";
+    }
+    echo "window.location.href = 'catequista.php';"; // Redirige a la página de catequistas
+    echo "</script>";
 }
 
 if (isset($_GET['id_catequista']) && is_numeric($_GET['id_catequista'])) {
@@ -50,4 +52,4 @@ if (isset($_GET['id_catequista']) && is_numeric($_GET['id_catequista'])) {
     eliminarCatequista($idCatequista);
 }
 ?>
-
+s
