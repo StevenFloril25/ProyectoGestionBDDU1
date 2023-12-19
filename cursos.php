@@ -63,7 +63,7 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="parroquias.php" class="nav-item nav-link active">Parroquias</a>
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
-                <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
+                <a href="catequista.php" class="nav-item nav-link">Guias Espirituales</a>
             </div>
             <a href="asistencia.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">ASISTENCIA</a>
 
