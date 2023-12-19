@@ -4,10 +4,10 @@ class Cconexion {
 
    public static function ConexionBD() {
 
-        $host = 'localhost';
+        $host = 'Steven';
         $dbname = 'ProyectoGestionBDDu1';
         $username = 'sa';
-        $pasword = '1234';
+        $pasword = 'datos';
         $puerto = 1433;
         try {
             $conn = new PDO("sqlsrv:Server=$host,$puerto;Database=$dbname", $username, $pasword);

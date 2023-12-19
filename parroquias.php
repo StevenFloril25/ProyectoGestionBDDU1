@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>eLEARNING - eLearning HTML Template</title>
+    <title>Proyecto Gestion BDD</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -74,82 +74,20 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Parroquias</h1>
-                    <nav aria-label="breadcrumb">
-                    </nav>
-                </div>
+    <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background-image: url('img/portadap1.jpg'); background-size: cover;">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Parroquias</h1>
+                <nav aria-label="breadcrumb">
+                </nav>
             </div>
         </div>
     </div>
+</div>
+
     <!-- Header End -->
 
-<<<<<<< Updated upstream
-
-    <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
-                <h1 class="mb-5">cursos Categories</h1>
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-7 col-md-6">
-                    <div class="row g-3">
-                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/cat-1.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                                    style="margin: 1px;">
-                                    <h5 class="m-0">Web Design</h5>
-                                    <small class="text-primary">49 cursos</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/cat-2.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                                    style="margin: 1px;">
-                                    <h5 class="m-0">Graphic Design</h5>
-                                    <small class="text-primary">49 cursos</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/cat-3.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                                    style="margin: 1px;">
-                                    <h5 class="m-0">Video Editing</h5>
-                                    <small class="text-primary">49 cursos</small>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/cat-4.jpg" alt=""
-                            style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                            style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                            <small class="text-primary">49 cursos</small>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Categories Start -->
-
-
-=======
->>>>>>> Stashed changes
     <!-- cursos Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -163,26 +101,18 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/iglesia1.jpg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-<<<<<<< Updated upstream
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                                    style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
-=======
                                 <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
->>>>>>> Stashed changes
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h5 class="mb-4">Parroquia Santa María Reina de los Mártires</h5>
+                            <h5 class="mb-4">Parroquia San Juan</h5>
                         </div>
                         <div class="d-flex border-top">
+                            
                             <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30
-                                Students</small>
+                                    class="fa fa-clock text-primary me-2"></i>Calle 24 de Mayo y Avenida Loja, Barrio La Florida</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
+                            (02) 276 0987</small>
                         </div>
                     </div>
                 </div>
@@ -191,26 +121,18 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/iglesia3.webp" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-<<<<<<< Updated upstream
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                                    style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
-=======
                                 <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
->>>>>>> Stashed changes
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h5 class="mb-4">Parroquia Anunciación</h5>
+                            <h5 class="mb-4">Iglesia Santa María</h5>
                         </div>
                         <div class="d-flex border-top">
+                            
                             <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30
-                                Students</small>
+                                    class="fa fa-clock text-primary me-2"></i>Calle Sucre y Avenida Quito, Barrio Quito Loma</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
+                            (02) 276 1234</small>
                         </div>
                     </div>
                 </div>
@@ -219,26 +141,37 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/iglesia4.jpg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-<<<<<<< Updated upstream
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                                    style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
-=======
                                 <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
->>>>>>> Stashed changes
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h5 class="mb-4">Parroquia Nuestra Señora de El Cisne</h5>
+                            <h5 class="mb-4">Capilla San José</h5>
+                        </div>
+                        <div class="d-flex border-top">
+                            
+                            <small class="flex-fill text-center border-end py-2"><i
+                                    class="fa fa-clock text-primary me-2"></i>Calle Bolívar y Avenida Guayaquil, Barrio Centro</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
+                            (02) 276 2345</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="course-item bg-light">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/iglesia2.jpg" alt="">
+                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h5 class="mb-4">Parroquia de la Resurrección</h5>
                         </div>
                         <div class="d-flex border-top">
                             <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30
-                                Students</small>
+                                    class="fa fa-clock text-primary me-2"></i>Calle Loja y Avenida Simón Bolívar, Barrio Algarrobo</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
+                            (02) 276 5432</small>
                         </div>
                     </div>
                 </div>
@@ -247,53 +180,58 @@
     </div>
     <!-- cursos End -->
 
+    <!-- MAPA START -->
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Parroquias</h6>
+                <h1 class="mb-5">Mapa Santo Domingo.</h1>
+            </div>
+    <div style="text-align: center;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31918.23767610028!2d-79.176192!3d-0.252067!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d546535730a17d%3A0xcef17541041b9f63!2sSanto%20Domingo!5e0!3m2!1ses-419!2sec!4v1702935583144!5m2!1ses-419!2sec" width="964.8px" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- MAPA END -->
 
     <!-- matriculas Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">matriculas</h6>
-                <h1 class="mb-5">Our Students Say!</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Parroquias</h6>
+                <h1 class="mb-5">Antecedentes.</h1>
             </div>
             <div class="owl-carousel matriculas-carousel position-relative">
                 <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/matriculas-1.jpg"
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia1.jpg"
                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <h5 class="mb-0">Parroquia San Juan</h5>
+                    
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">La Parroquia San Juan es una iglesia católica ubicada en el centro de Santo Domingo, Ecuador. Fue construida en el siglo XVI y es uno de los edificios religiosos más antiguos de la ciudad. La iglesia tiene una arquitectura colonial típica, con una fachada de piedra y un interior decorado con frescos y esculturas.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/matriculas-2.jpg"
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia2.jpg"
                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <h5 class="mb-0">Capilla San José</h5>
+                    
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">La Capilla San José es una iglesia católica ubicada en el barrio de Quito Loma, Santo Domingo, Ecuador. Fue construida en el siglo XIX y es una de las iglesias más pequeñas de la ciudad. La iglesia tiene una arquitectura sencilla, con una fachada de ladrillo y un interior acogedor.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/matriculas-3.jpg"
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia3.webp"
                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <h5 class="mb-0">Iglesia Santa María</h5>
+                    
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">La Iglesia Santa María es una iglesia católica ubicada en el barrio de La Florida, Santo Domingo, Ecuador. Fue construida en el siglo XX y es una de las iglesias más grandes de la ciudad. La iglesia tiene una arquitectura moderna, con una fachada de vidrio y un interior espacioso.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/matriculas-4.jpg"
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia4.jpg"
                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <h5 class="mb-0">Parroquia de la Resurrección</h5>
+                    
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">La Parroquia de la Resurrección es una iglesia católica ubicada en el barrio de Algarrobo, Santo Domingo, Ecuador. Fue construida en el siglo XXI y es una de las iglesias más nuevas de la ciudad. La iglesia tiene una arquitectura contemporánea, con una fachada de hormigón y un interior minimalista..</p>
                     </div>
                 </div>
             </div>
@@ -306,79 +244,13 @@
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Gallery</h4>
-                    <div class="row g-2 pt-2">
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
+                <a class="btn btn-link" href="cursos.php">Sacramentos</a>
+                <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+                <a class="btn btn-link" href="asistencia.php">Catequistas</a>
+                <a class="btn btn-link" href="matriculas.php">Matriculas</a>
             </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
