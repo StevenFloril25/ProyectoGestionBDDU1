@@ -74,188 +74,98 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background-image: url('img/portada2.webp'); background-size: cover; box-shadow: 0 0 20px 0px #000;">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">cursos</h1>
+                <h1 class="mb-5">Sacramentos.</h1>
                     <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">cursos</li>
-                        </ol>
+                    
                     </nav>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Header End -->
-
-
-    <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
-                <h1 class="mb-5">cursos Categories</h1>
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-7 col-md-6">
-                    <div class="row g-3">
-                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/cat-1.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                                    style="margin: 1px;">
-                                    <h5 class="m-0">Web Design</h5>
-                                    <small class="text-primary">49 cursos</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/cat-2.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                                    style="margin: 1px;">
-                                    <h5 class="m-0">Graphic Design</h5>
-                                    <small class="text-primary">49 cursos</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/cat-3.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                                    style="margin: 1px;">
-                                    <h5 class="m-0">Video Editing</h5>
-                                    <small class="text-primary">49 cursos</small>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/cat-4.jpg" alt=""
-                            style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
-                            style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                            <small class="text-primary">49 cursos</small>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Categories Start -->
-
 
     <!-- cursos Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">cursos</h6>
-                <h1 class="mb-5">Popular cursos</h1>
+                <h1 class="mb-5">Cursos Disponibles.</h1>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item bg-light">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/course-1.jpg" alt="">
+                            <img class="img-fluid" src="img/añobiblicojpg.jpg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                                    style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                                
+                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
                                     style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">$149.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small>(123)</small>
-                            </div>
-                            <h5 class="mb-4">Web Design & Development Course for Beginners</h5>
+                            
+                            <h5 class="mb-4">Año Biblico</h5>
+                            <p>El curso de año bíblico es un curso de formación cristiana que se centra en el estudio de la Biblia. El curso suele durar un año y se divide en diferentes temas, como la historia de la Biblia, sus personajes, sus enseñanzas y su mensaje. El curso está dirigido a personas de todas las edades y niveles de conocimiento bíblico.</p>
                         </div>
                         <div class="d-flex border-top">
+                            
                             <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
+                                    class="fa fa-clock text-primary me-2"></i>Viernes 4:00 PM</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30
-                                Students</small>
+                                Estudiantes</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="course-item bg-light">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/course-2.jpg" alt="">
+                            <img class="img-fluid" src="img/primeracomunion.jpg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                                    style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                                
+                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
                                     style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">$149.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small>(123)</small>
-                            </div>
-                            <h5 class="mb-4">Web Design & Development Course for Beginners</h5>
+                            
+                            <h5 class="mb-4">Primera Comunión</h5>
+                            <p>El curso de primera comunión es un curso de formación cristiana que prepara a los niños para recibir la primera comunión. El curso suele durar un año y se centra en el estudio de la vida de Jesús, los sacramentos y la fe católica. El curso está dirigido a niños de entre 7 y 10 años.</p>
                         </div>
                         <div class="d-flex border-top">
+                            
                             <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30
-                                Students</small>
+                                    class="fa fa-clock text-primary me-2"></i>Sábado 2:00 PM</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>25
+                                Estudiantes</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="course-item bg-light">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/course-3.jpg" alt="">
+                            <img class="img-fluid" src="img/conf4.jpg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                                    style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                                
+                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
                                     style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">$149.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small>(123)</small>
-                            </div>
-                            <h5 class="mb-4">Web Design & Development Course for Beginners</h5>
+                            
+                            <h5 class="mb-4">Confirmacion</h5>
+                            <p>El curso de confirmación es un curso de formación cristiana que reafirma la fe de los jóvenes. El curso suele durar un año y se centra en el estudio de la fe católica, la vocación y la responsabilidad cristiana. El curso está dirigido a jóvenes de entre 11 y 16 años.</p>
                         </div>
                         <div class="d-flex border-top">
+                            
                             <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30
-                                Students</small>
+                                    class="fa fa-clock text-primary me-2"></i>Domingo 10:00 AM</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>20
+                                Estudiantes</small>
                         </div>
                     </div>
                 </div>
@@ -269,48 +179,53 @@
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">matriculas</h6>
-                <h1 class="mb-5">Our Students Say!</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Testimonios</h6>
+                <h1 class="mb-5">Experiencias en los Sacramentos.</h1>
             </div>
             <div class="owl-carousel matriculas-carousel position-relative">
                 <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/matriculas-1.jpg"
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/bc.jpg"
                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <h5 class="mb-0">Bryan Cruz</h5>
+                   
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">Antes de empezar el curso de año bíblico, no sabía mucho sobre la Biblia. Solo había escuchado algunas historias de la escuela o de mis padres. Pero durante el curso, aprendí mucho sobre la historia de la Biblia, sus personajes y sus enseñanzas. También aprendí a leer la Biblia y a entender su mensaje.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/matriculas-2.jpg"
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/se.jpg"
                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <h5 class="mb-0">Stefany Erazo</h5>
+                   
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">El día de mi primera comunión fue uno de los mejores días de mi vida. Estaba muy feliz de poder recibir a Jesús en mi corazón.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/matriculas-3.jpg"
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/df.jpg"
                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <h5 class="mb-0">David Flores</h5>
+                    
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">La confirmación fue un momento muy importante para mí. Era la oportunidad de reafirmar mi fe y de comprometerme con la Iglesia.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/matriculas-4.jpg"
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/fa.png"
                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <h5 class="mb-0">Fabricio Alama</h5>
+                    
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-0">"Los cursos de año bíblico, primera comunión y confirmación fueron una experiencia muy importante para mí. Me ayudaron a crecer como persona y como cristiana.</p>
+                    </div>
+                </div>
+                <div class="matriculas-item text-center">
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/ab.jpg"
+                        style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Andrea Bravo</h5>
+                   
+                    <div class="matriculas-text bg-light text-center p-4">
+                        <p class="mb-0">Estoy muy agradecida por la oportunidad de haber participado en estos cursos. Me han ayudado a ser una mejor persona y a vivir mi fe de una manera más plena.</p>
                     </div>
                 </div>
             </div>
@@ -323,79 +238,13 @@
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Gallery</h4>
-                    <div class="row g-2 pt-2">
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
+                <a class="btn btn-link" href="cursos.php">Sacramentos</a>
+                <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+                <a class="btn btn-link" href="asistencia.php">Catequistas</a>
+                <a class="btn btn-link" href="matriculas.php">Matriculas</a>
             </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
