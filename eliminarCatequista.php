@@ -14,7 +14,7 @@ function eliminarCatequista($idCatequista)
         }
 
         // Mensaje de depuración
-        $mensajeExito = "Eliminando catequista con ID: " . $idCatequista;
+        $mensajeExito = "Eliminando el catequista ";
 
         $sql = "EXEC EliminarCatequista @IdCatequista=?";
         $stmt = $conexion->prepare($sql);
