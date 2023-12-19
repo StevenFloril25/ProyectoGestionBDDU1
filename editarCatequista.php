@@ -64,7 +64,7 @@ if (isset($_GET["id"])) {
 
 <head>
     <meta charset="utf-8">
-    <title>Matrículas</title>
+    <title>Editar Catequista</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -147,7 +147,7 @@ if (isset($_GET["id"])) {
         <div class="container">
             <div class="text-center">
                 <h6 class="section-title bg-white text-center text-primary px-3">editar catequista</h6>
-                <h1 class="mb-5">Niños Catecismo</h1>
+                <h1 class="mb-5">Edición Catequista</h1>
             </div>
 
             <form id="editar-form" action="editarCatequista.php" method="POST" class="col-md-6 mx-auto"
@@ -182,6 +182,8 @@ if (isset($_GET["id"])) {
 
                 <div class="mb-3 text-center">
                     <button type="submit" name="submit" class="btn btn-info text-white m-2">Actualizar</button>
+                    <a href="catequista.php" class="btn btn-secondary text-white m-2">Regresar</a>
+
                 </div>
             </form>
 

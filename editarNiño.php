@@ -72,7 +72,7 @@ if (isset($_GET["id"])) {
 
 <head>
     <meta charset="utf-8">
-    <title>Editar </title>
+    <title>Editar Niño</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -200,6 +200,8 @@ if (isset($_GET["id"])) {
                     <!-- Botón para enviar el formulario -->
                     <div class="mb-3 text-center">
                         <button type="submit" name="submit" class="btn btn-info text-white m-2">Actualizar</button>
+                        <a href="matriculas.php" class="btn btn-secondary text-white m-2">Regresar</a>
+
                     </div>
                 </form>
 
