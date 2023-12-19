@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     try {
         // Obtener la conexión
         $conexion = Cconexion::ConexionBD();
-    
+
         // Preparar la llamada al procedimiento almacenado
         $sql = "EXEC EditarCatequista @IdCatequista=?, @Nombre=?, @Apellido=?, @Telefono=?, @IdIglesia=?";
         $stmt = $conexion->prepare($sql);
@@ -21,12 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         $stmt->bindParam(3, $apellido, PDO::PARAM_STR);
         $stmt->bindParam(4, $telefono, PDO::PARAM_STR);
         $stmt->bindParam(5, $id_iglesia, PDO::PARAM_INT);
-    
+
         // Ejecutar la consulta
         $stmt->execute();
-    
+
         echo "Catequista actualizado correctamente.";
-    
+
         // Redirigir a catequistas.php
         header("Location: catequista.php");
         exit();
@@ -150,37 +150,72 @@ if (isset($_GET["id"])) {
                 <h1 class="mb-5">Niños Catecismo</h1>
             </div>
 
-            <!-- Formulario Matricula -->
-            <form id="editar-form" action="editarCatequista.php" method="POST" class="col-md-6 mx-auto">
+            <form id="editar-form" action="editarCatequista.php" method="POST" class="col-md-6 mx-auto"
+                onsubmit="return validarFormulario()">
                 <input type="hidden" name="id_catequista" value="<?php echo $id_catequista; ?>">
+
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" class="form-control"
-                            value="<?php echo $fila['nombre']; ?>" required>
+                        <input type="text" id="nombre" name="nombre" class="form-control" pattern="[A-Za-z]+"
+                            title="Ingresa solo letras" value="<?php echo $fila['nombre']; ?>" required>
                     </div>
                     <div class="col-md-6">
                         <label for="apellido" class="form-label">Apellido:</label>
-                        <input type="text" id="apellido" name="apellido" class="form-control"
-                            value="<?php echo $fila['apellido']; ?>" required>
+                        <input type="text" id="apellido" name="apellido" class="form-control" pattern="[A-Za-z]+"
+                            title="Ingresa solo letras" value="<?php echo $fila['apellido']; ?>" required>
                     </div>
                 </div>
+
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="telefono" class="form-label">Teléfono:</label>
-                        <input type="text" id="telefono" name="telefono" class="form-control"
-                            value="<?php echo $fila['telefono']; ?>" required>
+                        <input type="text" id="telefono" name="telefono" class="form-control" pattern="[0-9]{10}"
+                            title="Ingresa un número de 10 dígitos" value="<?php echo $fila['telefono']; ?>" required>
                     </div>
                     <div class="col-md-6">
                         <label for="id_iglesia" class="form-label">ID Iglesia:</label>
-                        <input type="text" id="id_iglesia" name="id_iglesia" class="form-control"
-                            value="<?php echo $fila['id_iglesia']; ?>" required>
+                        <input type="text" id="id_iglesia" name="id_iglesia" class="form-control" pattern="[0-9]+"
+                            title="Ingresa solo números" value="<?php echo $fila['id_iglesia']; ?>" required>
                     </div>
                 </div>
+
                 <div class="mb-3 text-center">
                     <button type="submit" name="submit" class="btn btn-info text-white m-2">Actualizar</button>
                 </div>
             </form>
+
+            <script>
+                function validarFormulario() {
+                    var nombre = document.getElementById("nombre").value;
+                    var apellido = document.getElementById("apellido").value;
+                    var telefono = document.getElementById("telefono").value;
+                    var idIglesia = document.getElementById("id_iglesia").value;
+
+                    // Validar que nombre y apellido contengan solo letras
+                    var letras = /^[A-Za-z]+$/;
+                    if (!nombre.match(letras) || !apellido.match(letras)) {
+                        alert("Ingresa solo letras en Nombre y Apellido");
+                        return false;
+                    }
+
+                    // Validar que el teléfono contenga solo números y tenga 10 dígitos
+                    var numeros = /^[0-9]+$/;
+                    if (!telefono.match(numeros) || telefono.length !== 10) {
+                        alert("Ingresa un número de 10 dígitos y no negativos");
+                        return false;
+                    }
+
+                    // Validar que el ID de la iglesia contenga solo números
+                    if (!idIglesia.match(numeros)) {
+                        alert("Ingresa solo el número del ID");
+                        return false;
+                    }
+
+                    return true; // Si todas las validaciones pasan, permite enviar el formulario
+                }
+            </script>
+
 
         </div>
 

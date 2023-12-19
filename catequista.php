@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         // Ejecutar la consulta
         $stmt->execute();
 
-        echo "Catequista agregado correctamente.";
+        echo "";
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     } finally {
@@ -136,30 +136,35 @@ if ($conexion) {
         <div class="container">
             <div class="text-center">
                 <h6 class="section-title bg-white text-center text-primary px-3">catequista</h6>
-                <h1 class="mb-5">Niños Catecismo</h1>
+                <h1 class="mb-5">Ingreso Catequista</h1>
             </div>
 
             <!-- Formulario Matricula -->
-            <form id="catequista-form" action="catequista.php" method="POST" class="col-md-6 mx-auto">
+            <form id="catequista-form" action="catequista.php" method="POST" class="col-md-6 mx-auto"
+                onsubmit="return validarFormulario()">
                 <!-- Campos del formulario -->
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" class="form-control" required>
+                        <input type="text" id="nombre" name="nombre" class="form-control" pattern="[A-Za-z]+"
+                            title="Ingresa solo letras" required>
                     </div>
                     <div class="col-md-6">
                         <label for="apellido" class="form-label">Apellido:</label>
-                        <input type="text" id="apellido" name="apellido" class="form-control" required>
+                        <input type="text" id="apellido" name="apellido" class="form-control" pattern="[A-Za-z]+"
+                            title="Ingresa solo letras" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="telefono" class="form-label">Teléfono:</label>
-                        <input type="text" id="telefono" name="telefono" class="form-control" required>
+                        <input type="text" id="telefono" name="telefono" class="form-control" pattern="[0-9]{10}"
+                            title="Ingresa un número de 10 dígitos y no negativos" required>
                     </div>
                     <div class="col-md-6">
                         <label for="id_iglesia" class="form-label">ID Iglesia:</label>
-                        <input type="text" id="id_iglesia" name="id_iglesia" class="form-control" required>
+                        <input type="text" id="id_iglesia" name="id_iglesia" class="form-control" pattern="[0-9]+"
+                            title="Ingresa solo el número del ID" required>
                     </div>
                 </div>
                 <div class="mb-3 text-center">
@@ -167,52 +172,83 @@ if ($conexion) {
                 </div>
             </form>
 
+            <script>
+                function validarFormulario() {
+                    var nombre = document.getElementById("nombre").value;
+                    var apellido = document.getElementById("apellido").value;
+                    var telefono = document.getElementById("telefono").value;
+                    var idIglesia = document.getElementById("id_iglesia").value;
 
-          <!-- Mostrar los datos en la tabla -->
-<div class="table-responsive">
-    <table id="tabla-catequistas" class="table table-striped">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Teléfono</th>
-                <th>Iglesia</th>
-                <th class="text-center">Editar y Eliminar</th>
-            </tr>
-        </thead>
-        <tbody id="catequistas-list">
-            <?php
-            // Verificar si hay resultados antes de mostrar la tabla
-            if ($resultado) {
-                while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<tr>";
-                    echo "<td>" . $fila['nombre'] . "</td>";
-                    echo "<td>" . $fila['apellido'] . "</td>";
-                    echo "<td>" . $fila['telefono'] . "</td>";
-                    echo "<td>" . $fila['id_iglesia'] . "</td>";
-                    echo "<td class='text-center'>";
+                    // Validar que nombre y apellido contengan solo letras
+                    var letras = /^[A-Za-z]+$/;
+                    if (!nombre.match(letras) || !apellido.match(letras)) {
+                        alert("Ingresa solo letras en Nombre y Apellido");
+                        return false;
+                    }
 
-                    // Botón Editar
-                    echo "<a class='btn btn-info rounded-circle mx-1' href='editarCatequista.php?id={$fila['id_catequista']}' title='Editar'>
+                    // Validar que el teléfono contenga solo números y tenga 10 dígitos
+                    var numeros = /^[0-9]+$/;
+                    if (!telefono.match(numeros) || telefono.length !== 10) {
+                        alert("Ingresa un número de 10 dígitos y no negativos");
+                        return false;
+                    }
+
+                    // Validar que el ID de la iglesia contenga solo números
+                    if (!idIglesia.match(numeros)) {
+                        alert("Ingresa solo el número del ID");
+                        return false;
+                    }
+
+                    return true; // Si todas las validaciones pasan, permite enviar el formulario
+                }
+            </script>
+
+
+            <!-- Mostrar los datos en la tabla -->
+            <div class="table-responsive">
+                <table id="tabla-catequistas" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Teléfono</th>
+                            <th>Iglesia</th>
+                            <th class="text-center">Editar y Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="catequistas-list">
+                        <?php
+                        // Verificar si hay resultados antes de mostrar la tabla
+                        if ($resultado) {
+                            while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<tr>";
+                                echo "<td>" . $fila['nombre'] . "</td>";
+                                echo "<td>" . $fila['apellido'] . "</td>";
+                                echo "<td>" . $fila['telefono'] . "</td>";
+                                echo "<td>" . $fila['id_iglesia'] . "</td>";
+                                echo "<td class='text-center'>";
+
+                                // Botón Editar
+                                echo "<a class='btn btn-info rounded-circle mx-1' href='editarCatequista.php?id={$fila['id_catequista']}' title='Editar'>
                     <i class='bi bi-journal text-light'></i>
                 </a>";
 
-                    // Botón Eliminar
-                    echo "<a class='btn btn-secondary rounded-circle mx-1' href='eliminarCatequista.php?id_catequista={$fila['id_catequista']}' 
+                                // Botón Eliminar
+                                echo "<a class='btn btn-secondary rounded-circle mx-1' href='eliminarCatequista.php?id_catequista={$fila['id_catequista']}' 
                     onclick='return confirm(\"¿Estás seguro de que deseas eliminar este registro?\")' title='Eliminar'>
                     <i class='bi bi-x text-light'></i>
                 </a>";
 
-                    echo "</td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='5'>No hay catequistas registrados.</td></tr>";
-            }
-            ?>
-        </tbody>
-    </table>
-</div>
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='5'>No hay catequistas registrados.</td></tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
 
 
             <!-- matriculas End -->

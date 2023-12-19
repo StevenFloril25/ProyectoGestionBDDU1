@@ -163,7 +163,10 @@ if (isset($_GET["id"])) {
                 </div>
 
                 <!-- Formulario Matricula -->
-                <form id="editar-form" action="editarNiño.php" method="POST" class="col-md-6 mx-auto">
+                <!-- Formulario Matricula -->
+                <form id="editar-form" action="editarNiño.php" method="POST" class="col-md-6 mx-auto"
+                    onsubmit="return validarFormulario()">
+
                     <!-- Campo oculto para almacenar el ID del niño -->
                     <input type="hidden" name="id_niño" value="<?php echo $id_niño; ?>">
 
@@ -171,26 +174,26 @@ if (isset($_GET["id"])) {
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="nombre" class="form-label">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre" class="form-control"
-                                value="<?php echo $fila['nombre']; ?>" required>
+                            <input type="text" id="nombre" name="nombre" class="form-control" pattern="[A-Za-z]+"
+                                title="Ingresa solo letras" value="<?php echo $fila['nombre']; ?>" required>
                         </div>
                         <div class="col-md-6">
                             <label for="apellido" class="form-label">Apellido:</label>
-                            <input type="text" id="apellido" name="apellido" class="form-control"
-                                value="<?php echo $fila['apellido']; ?>" required>
+                            <input type="text" id="apellido" name="apellido" class="form-control" pattern="[A-Za-z]+"
+                                title="Ingresa solo letras" value="<?php echo $fila['apellido']; ?>" required>
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="edad" class="form-label">Edad:</label>
-                            <input type="number" id="edad" name="edad" class="form-control"
-                                value="<?php echo $fila['edad']; ?>" required>
+                            <input type="number" id="edad" name="edad" class="form-control" min="6" max="18" required>
                         </div>
                         <div class="col-md-6">
                             <label for="telefono" class="form-label">Teléfono Familiar:</label>
-                            <input type="text" id="telefono" name="telefono" class="form-control"
-                                value="<?php echo $fila['telefonopadres']; ?>" required>
+                            <input type="text" id="telefono" name="telefono" class="form-control" pattern="[0-9]{10}"
+                                title="Ingresa un número de 10 dígitos" value="<?php echo $fila['telefonopadres']; ?>"
+                                required>
                         </div>
                     </div>
 
@@ -199,6 +202,37 @@ if (isset($_GET["id"])) {
                         <button type="submit" name="submit" class="btn btn-info text-white m-2">Actualizar</button>
                     </div>
                 </form>
+
+                <script>
+                    function validarFormulario() {
+                        var nombre = document.getElementById("nombre").value;
+                        var apellido = document.getElementById("apellido").value;
+                        var edad = document.getElementById("edad").value;
+                        var telefono = document.getElementById("telefono").value;
+
+                        // Validar que nombre y apellido contengan solo letras
+                        var letras = /^[A-Za-z]+$/;
+                        if (!nombre.match(letras) || !apellido.match(letras)) {
+                            alert("Ingresa solo letras en Nombre y Apellido");
+                            return false;
+                        }
+
+                        // Validar que la edad sea un número positivo y esté en el rango de 6 a 18 años
+                        if (isNaN(edad) || edad <= 0 || edad < 6 || edad > 18) {
+                            alert("Ingresa una edad válida en el rango de 6 a 18 años");
+                            return false;
+                        }
+
+                        // Validar que el teléfono contenga solo números y tenga 10 dígitos
+                        var numeros = /^[0-9]+$/;
+                        if (!telefono.match(numeros) || telefono.length !== 10) {
+                            alert("Ingresa un número de teléfono válido de 10 dígitos");
+                            return false;
+                        }
+
+                        return true; // Si todas las validaciones pasan, permite enviar el formulario
+                    }
+                </script>
 
 
                 <!-- matriculas End -->
