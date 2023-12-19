@@ -65,7 +65,7 @@
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
             </div>
-            <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">ASISTENCIA</a>
+            <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">CATEQUISTA</a>
 
             <a href="matriculas.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">MATRÍCULAS</a>
         </div>
@@ -248,7 +248,7 @@
                 <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
                 <a class="btn btn-link" href="cursos.php">Sacramentos</a>
                 <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
-                <a class="btn btn-link" href="asistencia.php">Catequistas</a>
+                <a class="btn btn-link" href="catequista.php">Catequistas</a>
                 <a class="btn btn-link" href="matriculas.php">Matriculas</a>
             </div>
             </div>

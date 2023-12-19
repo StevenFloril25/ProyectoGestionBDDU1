@@ -10,7 +10,7 @@ function eliminarCatequista($idCatequista)
     if ($conexion) {
         try {
             // Preparar la llamada al procedimiento almacenado
-            $sql = "EXEC EliminarCatequista @id_catequista=?";
+            $sql = "EXEC EliminarCatequista @IdCatequista=?";
             $stmt = $conexion->prepare($sql);
             $stmt->bindParam(1, $idCatequista, PDO::PARAM_INT);
 
@@ -21,26 +21,24 @@ function eliminarCatequista($idCatequista)
             $rowCount = $stmt->rowCount();
 
             if ($rowCount > 0) {
-                echo "<script>
-                        alert('Registro de catequista eliminado correctamente.');
-                        window.location.href = 'catequista.php'; // Redirige a la misma página
-                      </script>";
+                header("Location: catequista.php"); // Redirige a la página principal de catequistas
+                exit();
             } else {
                 echo "<script>
-                        alert('No se encontró el registro de catequista para eliminar.');
-                        window.location.href = 'catequista.php'; // Redirige a la misma página
+                        alert('No se encontró el registro de Catequista para eliminar.');
+                        window.location.href = 'catequista.php'; 
                       </script>";
             }
         } catch (PDOException $e) {
             echo "<script>
                     alert('Error al ejecutar la consulta: " . $e->getMessage() . "');
-                    window.location.href = 'catequista.php'; // Redirige a la misma página
+                    window.location.href = 'catequista.php'; 
                   </script>";
         }
     } else {
         echo "<script>
                 alert('Error al establecer la conexión a la base de datos.');
-                window.location.href = 'catequista.php'; // Redirige a la misma página
+                window.location.href = 'catequista.php'; 
               </script>";
     }
 }

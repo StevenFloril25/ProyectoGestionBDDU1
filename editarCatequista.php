@@ -1,7 +1,7 @@
 <?php
 include_once "conexion.php";
 
-// Manejar el envío del formulario de edición
+// Verificar si se envió el formulario de edición
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     $id_catequista = $_POST["id_catequista"];
     $nombre = $_POST["nombre"];
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     try {
         // Obtener la conexión
         $conexion = Cconexion::ConexionBD();
-
+    
         // Preparar la llamada al procedimiento almacenado
         $sql = "EXEC EditarCatequista @IdCatequista=?, @Nombre=?, @Apellido=?, @Telefono=?, @IdIglesia=?";
         $stmt = $conexion->prepare($sql);
@@ -21,11 +21,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         $stmt->bindParam(3, $apellido, PDO::PARAM_STR);
         $stmt->bindParam(4, $telefono, PDO::PARAM_STR);
         $stmt->bindParam(5, $id_iglesia, PDO::PARAM_INT);
-
+    
         // Ejecutar la consulta
         $stmt->execute();
-
-        echo "";
+    
+        echo "Catequista actualizado correctamente.";
+    
+        // Redirigir a catequistas.php
+        header("Location: catequistas.php");
+        exit();
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     } finally {
@@ -117,7 +121,7 @@ if (isset($_GET["id"])) {
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
             </div>
-            <a href="asistencia.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">ASISTENCIA</a>
+            <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">CATEQUISTA</a>
 
             <a href="matriculas.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">MATRÍCULAS</a>
 
@@ -147,8 +151,8 @@ if (isset($_GET["id"])) {
             </div>
 
             <!-- Formulario Matricula -->
-            <form id="editar-form" action="catequista.php" method="POST" class="col-md-6 mx-auto">
-                <input type="hidden" name="id_catequista" value="<?php echo $fila['id_catequista']; ?>">
+            <form id="editar-form" action="editarCatequista.php" method="POST" class="col-md-6 mx-auto">
+                <input type="hidden" name="id_catequista" value="<?php echo $id_catequista; ?>">
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="nombre" class="form-label">Nombre:</label>
@@ -177,6 +181,7 @@ if (isset($_GET["id"])) {
                     <button type="submit" name="submit" class="btn btn-info text-white m-2">Actualizar</button>
                 </div>
             </form>
+
         </div>
 
         <!-- matriculas End -->

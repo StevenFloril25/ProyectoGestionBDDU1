@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         }
     }
 }
+
 // Mostrar datos en la tabla
 $conexion = Cconexion::ConexionBD();
 
@@ -43,7 +44,9 @@ if ($conexion) {
 } else {
     echo "Error al cerrar la conexión";
 }
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -107,7 +110,7 @@ if ($conexion) {
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
             </div>
-            <a href="asistencia.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">ASISTENCIA</a>
+            <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">CATEQUISTA</a>
 
             <a href="matriculas.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">MATRÍCULAS</a>
 
@@ -120,7 +123,7 @@ if ($conexion) {
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Matrículas</h1>
+                    <h1 class="display-3 text-white animated slideInDown">Catequista</h1>
                 </div>
             </div>
         </div>
@@ -132,7 +135,7 @@ if ($conexion) {
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">matrículas</h6>
+                <h6 class="section-title bg-white text-center text-primary px-3">catequista</h6>
                 <h1 class="mb-5">Niños Catecismo</h1>
             </div>
 
