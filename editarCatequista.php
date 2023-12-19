@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         echo "Catequista actualizado correctamente.";
     
         // Redirigir a catequistas.php
-        header("Location: catequistas.php");
+        header("Location: catequista.php");
         exit();
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
