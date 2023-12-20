@@ -8,7 +8,7 @@ class Cconexion {
         $dbname = 'ProyectoGestionBDDu1';
         $username = 'sa';
         $pasword = '1234';
-        $puerto = 1433;
+        $puerto = '1433';
         try {
             $conn = new PDO("sqlsrv:Server=$host,$puerto;Database=$dbname", $username, $pasword);
             echo "";
