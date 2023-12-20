@@ -65,7 +65,6 @@
                 <a href="parroquias.php" class="nav-item nav-link active">Parroquias</a>
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
-                <a href="vista.php" class="nav-item nav-link">Vista</a>
             </div>
             <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">CATEQUISTA</a>
 
@@ -76,6 +75,7 @@
 
 
     <!-- Header Start -->
+
   <!-- Header Start -->
 <div class="container-fluid bg-dark">
     <div class="container py-5">
@@ -86,6 +86,14 @@
                 <nav aria-label="breadcrumb">
                     
                 </nav>
+    <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background-image: url('img/portadaG.jpg'); background-size: cover; box-shadow: 0 0 20px 0px #000;">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Maestros en procesion.</h1>
+                    <nav aria-label="breadcrumb">
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
@@ -95,183 +103,65 @@
 
     <!-- guias Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
-                <h1 class="mb-5">Expert Instructors</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="guias-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/Padre1.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="guias-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/Padre 2.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="guias-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/padre3.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="guias-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/w1.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="guias-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/padre4.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <!-- ... (otras columnas) ... -->
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid rounded" src="img/w2.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid rounded" src="img/padre6.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <!-- ... (otras columnas) ... -->
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Instructor Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title bg-white text-center text-primary px-3">Iglesia Central</h6>
+      <h1 class="mb-5">Maestros de la fe.</h1>
     </div>
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="guias-item bg-light">
+          <div class="overflow-hidden">
+            <img class="img-fluid rounded" style="width: 200px; height: 200px;" src="img/padre6.jpg" alt="">
+          </div>
+          <div class="text-center p-4">
+            <h5 class="mb-0">Juan Pérez</h5>
+            <small>096 324 3558</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="guias-item bg-light">
+          <div class="overflow-hidden">
+            <img class="img-fluid rounded" style="width: 200px; height: 200px;" src="img/w1.jpg" alt="">
+          </div>
+          <div class="text-center p-4">
+            <h5 class="mb-0">María Gómez</h5>
+            <small>095 147 8563</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="team-item bg-light">
+          <div class="overflow-hidden">
+            <img class="img-fluid rounded" style="width: 200px; height: 200px;" src="img/padre4.jpg" alt="">
+          </div>
+          <div class="text-center p-4">
+            <h5 class="mb-0">José López</h5>
+            <small>099 665 1221</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="team-item bg-light">
+          <div class="overflow-hidden">
+            <img class="img-fluid rounded" style="width: 200px; height: 200px;" src="img/w3.png" alt="">
+          </div>
+          <div class="text-center p-4">
+            <h5 class="mb-0">Ana Martínez</h5>
+            <small>096 314 3032</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- team End -->
 
 
     <!-- Footer Start -->
-     <!-- Footer Start -->
+
      <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
         <!-- Primera fila -->
@@ -293,6 +183,25 @@
             <!-- Columna 3 -->
             <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
             <div class="col-lg-6 col-md-12 text-end">
+                <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
+                    <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
+                </span>
+            </div>
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
+                <a class="btn btn-link" href="cursos.php">Sacramentos</a>
+                <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+                <a class="btn btn-link" href="asistencia.php">Catequistas</a>
+                <a class="btn btn-link" href="matriculas.php">Matriculas</a>
+            </div>
+
+            <!-- Nueva sección para la cruz sin fondo -->
+            <div class="col-lg-9 col-md-6 text-end">
+                <!-- Ajustar el tamaño y color de la cruz según tus preferencias -->
                 <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
                     <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
