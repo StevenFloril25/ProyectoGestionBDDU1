@@ -65,6 +65,8 @@
                 <a href="parroquias.php" class="nav-item nav-link active">Parroquias</a>
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
+                <a href="vista.php" class="nav-item nav-link">Búsqueda</a>
+
             </div>
             <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">CATEQUISTA</a>
 
@@ -74,19 +76,22 @@
     <!-- Navbar End -->
 
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background-image: url('img/portadaG.jpg'); background-size: cover; box-shadow: 0 0 20px 0px #000;">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Maestros en procesion.</h1>
-                    <nav aria-label="breadcrumb">
-                    </nav>
+   <!-- Header Start -->
+   <div class="container-fluid bg-dark">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <br><br>
+                        <h1 class="mb-5 text-white">Guías Espirituales</h1>
+                        <nav aria-label="breadcrumb">
+
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Header End -->
+        <!-- Header End -->
+
 
 
     <!-- guias Start -->
@@ -148,30 +153,39 @@
     <!-- team End -->
 
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
-                <a class="btn btn-link" href="cursos.php">Sacramentos</a>
-                <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
-                <a class="btn btn-link" href="asistencia.php">Catequistas</a>
-                <a class="btn btn-link" href="matriculas.php">Matriculas</a>
+     <!-- Footer Start -->
+     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <!-- Primera fila -->
+            <div class="row g-5">
+                <!-- Columna 1 -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
+                    <a class="btn btn-link" href="parroquias.php">Parroquias</a>
+                    <a class="btn btn-link" href="cursos.php">Sacramentos</a>
+                    <a class="btn btn-link" href="guias.php">Búsqueda</a>
+                </div>
+                <!-- Columna 2 -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <br> <br>
+                    <a class="btn btn-link" href="vista.php">Vista</a>
+                    <a class="btn btn-link" href="catequista.php">Catequistas</a>
+                    <a class="btn btn-link" href="matriculas.php">Matriculas</a>
+                </div>
+                <!-- Columna 3 -->
+                <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
+                <div class="col-lg-6 col-md-12 text-end">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
+                        <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
+                    </span>
+                </div>
+                <!-- Fin de la nueva sección para la cruz sin fondo -->
             </div>
-
-            <!-- Nueva sección para la cruz sin fondo -->
-            <div class="col-lg-9 col-md-6 text-end">
-                <!-- Ajustar el tamaño y color de la cruz según tus preferencias -->
-                <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
-                    <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
-                </span>
-            </div>
-            <!-- Fin de la nueva sección para la cruz sin fondo -->
         </div>
     </div>
-</div>
+
+
     <!-- Footer End -->
 
 

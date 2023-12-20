@@ -109,7 +109,7 @@ if ($conexion) {
                 <a href="parroquias.php" class="nav-item nav-link active">Parroquias</a>
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
-                <a href="vista.php" class="nav-item nav-link">Vista</a>
+                <a href="vista.php" class="nav-item nav-link">Búsqueda</a>
 
             </div>
             <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">CATEQUISTA</a>
@@ -276,7 +276,7 @@ if ($conexion) {
             <!-- Columna 2 -->
             <div class="col-lg-3 col-md-6 text-center">
                 <br> <br> 
-                <a class="btn btn-link" href="vista.php">Vista</a>
+                <a class="btn btn-link" href="vista.php">Búsqueda</a>
                 <a class="btn btn-link" href="catequista.php">Catequistas</a>
                 <a class="btn btn-link" href="matriculas.php">Matriculas</a>
             </div>
