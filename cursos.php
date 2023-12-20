@@ -76,18 +76,20 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background-image: url('img/portada2.webp'); background-size: cover; box-shadow: 0 0 20px 0px #000;">
+    <div class="container-fluid bg-dark">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                <h1 class="mb-5">Sacramentos.</h1>
+                    <br><br>
+                    <h1 class="mb-5 text-white">Sacramentos.</h1>
                     <nav aria-label="breadcrumb">
-                    
+
                     </nav>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- Header End -->
 
@@ -104,18 +106,21 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/añobiblicojpg.jpg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                
+
                                 <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
                                     style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            
+
                             <h5 class="mb-4">Año Biblico</h5>
-                            <p>El curso de año bíblico es un curso de formación cristiana que se centra en el estudio de la Biblia. El curso suele durar un año y se divide en diferentes temas, como la historia de la Biblia, sus personajes, sus enseñanzas y su mensaje. El curso está dirigido a personas de todas las edades y niveles de conocimiento bíblico.</p>
+                            <p>El curso de año bíblico es un curso de formación cristiana que se centra en el estudio de
+                                la Biblia. El curso suele durar un año y se divide en diferentes temas, como la historia
+                                de la Biblia, sus personajes, sus enseñanzas y su mensaje. El curso está dirigido a
+                                personas de todas las edades y niveles de conocimiento bíblico.</p>
                         </div>
                         <div class="d-flex border-top">
-                            
+
                             <small class="flex-fill text-center border-end py-2"><i
                                     class="fa fa-clock text-primary me-2"></i>Viernes 4:00 PM</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30
@@ -128,18 +133,21 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/primeracomunion.jpg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                
+
                                 <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
                                     style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            
+
                             <h5 class="mb-4">Primera Comunión</h5>
-                            <p>El curso de primera comunión es un curso de formación cristiana que prepara a los niños para recibir la primera comunión. El curso suele durar un año y se centra en el estudio de la vida de Jesús, los sacramentos y la fe católica. El curso está dirigido a niños de entre 7 y 10 años.</p>
+                            <p>El curso de primera comunión es un curso de formación cristiana que prepara a los niños
+                                para recibir la primera comunión. El curso suele durar un año y se centra en el estudio
+                                de la vida de Jesús, los sacramentos y la fe católica. El curso está dirigido a niños de
+                                entre 7 y 10 años.</p>
                         </div>
                         <div class="d-flex border-top">
-                            
+
                             <small class="flex-fill text-center border-end py-2"><i
                                     class="fa fa-clock text-primary me-2"></i>Sábado 2:00 PM</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>25
@@ -152,18 +160,21 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/conf4.jpg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                
+
                                 <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
                                     style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            
+
                             <h5 class="mb-4">Confirmacion</h5>
-                            <p>El curso de confirmación es un curso de formación cristiana que reafirma la fe de los jóvenes. El curso suele durar un año y se centra en el estudio de la fe católica, la vocación y la responsabilidad cristiana. El curso está dirigido a jóvenes de entre 11 y 16 años.</p>
+                            <p>El curso de confirmación es un curso de formación cristiana que reafirma la fe de los
+                                jóvenes. El curso suele durar un año y se centra en el estudio de la fe católica, la
+                                vocación y la responsabilidad cristiana. El curso está dirigido a jóvenes de entre 11 y
+                                16 años.</p>
                         </div>
                         <div class="d-flex border-top">
-                            
+
                             <small class="flex-fill text-center border-end py-2"><i
                                     class="fa fa-clock text-primary me-2"></i>Domingo 10:00 AM</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>20
@@ -189,45 +200,52 @@
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/bc.jpg"
                         style="width: 80px; height: 80px;">
                     <h5 class="mb-0">Bryan Cruz</h5>
-                   
+
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Antes de empezar el curso de año bíblico, no sabía mucho sobre la Biblia. Solo había escuchado algunas historias de la escuela o de mis padres. Pero durante el curso, aprendí mucho sobre la historia de la Biblia, sus personajes y sus enseñanzas. También aprendí a leer la Biblia y a entender su mensaje.</p>
+                        <p class="mb-0">Antes de empezar el curso de año bíblico, no sabía mucho sobre la Biblia. Solo
+                            había escuchado algunas historias de la escuela o de mis padres. Pero durante el curso,
+                            aprendí mucho sobre la historia de la Biblia, sus personajes y sus enseñanzas. También
+                            aprendí a leer la Biblia y a entender su mensaje.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/se.jpg"
                         style="width: 80px; height: 80px;">
                     <h5 class="mb-0">Stefany Erazo</h5>
-                   
+
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">El día de mi primera comunión fue uno de los mejores días de mi vida. Estaba muy feliz de poder recibir a Jesús en mi corazón.</p>
+                        <p class="mb-0">El día de mi primera comunión fue uno de los mejores días de mi vida. Estaba muy
+                            feliz de poder recibir a Jesús en mi corazón.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/df.jpg"
                         style="width: 80px; height: 80px;">
                     <h5 class="mb-0">David Flores</h5>
-                    
+
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">La confirmación fue un momento muy importante para mí. Era la oportunidad de reafirmar mi fe y de comprometerme con la Iglesia.</p>
+                        <p class="mb-0">La confirmación fue un momento muy importante para mí. Era la oportunidad de
+                            reafirmar mi fe y de comprometerme con la Iglesia.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/fa.png"
                         style="width: 80px; height: 80px;">
                     <h5 class="mb-0">Fabricio Alama</h5>
-                    
+
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">"Los cursos de año bíblico, primera comunión y confirmación fueron una experiencia muy importante para mí. Me ayudaron a crecer como persona y como cristiana.</p>
+                        <p class="mb-0">"Los cursos de año bíblico, primera comunión y confirmación fueron una
+                            experiencia muy importante para mí. Me ayudaron a crecer como persona y como cristiana.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/ab.jpg"
                         style="width: 80px; height: 80px;">
                     <h5 class="mb-0">Andrea Bravo</h5>
-                   
+
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Estoy muy agradecida por la oportunidad de haber participado en estos cursos. Me han ayudado a ser una mejor persona y a vivir mi fe de una manera más plena.</p>
+                        <p class="mb-0">Estoy muy agradecida por la oportunidad de haber participado en estos cursos. Me
+                            han ayudado a ser una mejor persona y a vivir mi fe de una manera más plena.</p>
                     </div>
                 </div>
             </div>
@@ -237,16 +255,34 @@
 
 
     <!-- Footer Start -->
+    <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
+            <!-- Primera fila -->
             <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
-                <a class="btn btn-link" href="cursos.php">Sacramentos</a>
-                <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
-                <a class="btn btn-link" href="asistencia.php">Catequistas</a>
-                <a class="btn btn-link" href="matriculas.php">Matriculas</a>
-            </div>
+                <!-- Columna 1 -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
+                    <a class="btn btn-link" href="parroquias.php">Parroquias</a>
+                    <a class="btn btn-link" href="cursos.php">Sacramentos</a>
+                    <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+                </div>
+                <!-- Columna 2 -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <br> <br>
+                    <a class="btn btn-link" href="vista.php">Vista</a>
+                    <a class="btn btn-link" href="catequista.php">Catequistas</a>
+                    <a class="btn btn-link" href="matriculas.php">Matriculas</a>
+                </div>
+                <!-- Columna 3 -->
+                <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
+                <div class="col-lg-6 col-md-12 text-end">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
+                        <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
+                    </span>
+                </div>
+                <!-- Fin de la nueva sección para la cruz sin fondo -->
             </div>
         </div>
     </div>

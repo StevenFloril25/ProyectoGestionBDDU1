@@ -76,17 +76,18 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background-image: url('img/portadap1.jpg'); background-size: cover;">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <h1 class="display-3 text-white animated slideInDown">Parroquias</h1>
-                <nav aria-label="breadcrumb">
-                </nav>
+    <!-- Header Start -->
+    <div class="container-fluid bg-dark">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <br><br>
+                    <h1 class="mb-5 text-white">Parroquías.</h1>
+                    <nav aria-label="breadcrumb"></nav>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <!-- Header End -->
 
@@ -103,18 +104,20 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/iglesia1.jpg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
+                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
                             <h5 class="mb-4">Parroquia San Juan</h5>
                         </div>
                         <div class="d-flex border-top">
-                            
+
                             <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>Calle 24 de Mayo y Avenida Loja, Barrio La Florida</small>
+                                    class="fa fa-clock text-primary me-2"></i>Calle 24 de Mayo y Avenida Loja, Barrio La
+                                Florida</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
-                            (02) 276 0987</small>
+                                (02) 276 0987</small>
                         </div>
                     </div>
                 </div>
@@ -123,18 +126,20 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/iglesia3.webp" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
+                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
                             <h5 class="mb-4">Iglesia Santa María</h5>
                         </div>
                         <div class="d-flex border-top">
-                            
+
                             <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>Calle Sucre y Avenida Quito, Barrio Quito Loma</small>
+                                    class="fa fa-clock text-primary me-2"></i>Calle Sucre y Avenida Quito, Barrio Quito
+                                Loma</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
-                            (02) 276 1234</small>
+                                (02) 276 1234</small>
                         </div>
                     </div>
                 </div>
@@ -143,18 +148,20 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/iglesia4.jpg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
+                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
                             <h5 class="mb-4">Capilla San José</h5>
                         </div>
                         <div class="d-flex border-top">
-                            
+
                             <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>Calle Bolívar y Avenida Guayaquil, Barrio Centro</small>
+                                    class="fa fa-clock text-primary me-2"></i>Calle Bolívar y Avenida Guayaquil, Barrio
+                                Centro</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
-                            (02) 276 2345</small>
+                                (02) 276 2345</small>
                         </div>
                     </div>
                 </div>
@@ -163,7 +170,8 @@
                         <div class="position-relative overflow-hidden">
                             <img class="img-fluid" src="img/iglesia2.jpg" alt="">
                             <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
+                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
@@ -171,9 +179,10 @@
                         </div>
                         <div class="d-flex border-top">
                             <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>Calle Loja y Avenida Simón Bolívar, Barrio Algarrobo</small>
+                                    class="fa fa-clock text-primary me-2"></i>Calle Loja y Avenida Simón Bolívar, Barrio
+                                Algarrobo</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
-                            (02) 276 5432</small>
+                                (02) 276 5432</small>
                         </div>
                     </div>
                 </div>
@@ -184,11 +193,14 @@
 
     <!-- MAPA START -->
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Parroquias</h6>
-                <h1 class="mb-5">Mapa Santo Domingo.</h1>
-            </div>
+        <h6 class="section-title bg-white text-center text-primary px-3">Parroquias</h6>
+        <h1 class="mb-5">Mapa Santo Domingo.</h1>
+    </div>
     <div style="text-align: center;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31918.23767610028!2d-79.176192!3d-0.252067!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d546535730a17d%3A0xcef17541041b9f63!2sSanto%20Domingo!5e0!3m2!1ses-419!2sec!4v1702935583144!5m2!1ses-419!2sec" width="964.8px" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31918.23767610028!2d-79.176192!3d-0.252067!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d546535730a17d%3A0xcef17541041b9f63!2sSanto%20Domingo!5e0!3m2!1ses-419!2sec!4v1702935583144!5m2!1ses-419!2sec"
+            width="964.8px" height="500px" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!-- MAPA END -->
 
@@ -203,37 +215,49 @@
                 <div class="matriculas-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia1.jpg"
                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Parroquia San Juan</h5>
-                    
+                    <h5 class="mb-0">Parroquia San Juan - 1013</h5>
+
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">La Parroquia San Juan es una iglesia católica ubicada en el centro de Santo Domingo, Ecuador. Fue construida en el siglo XVI y es uno de los edificios religiosos más antiguos de la ciudad. La iglesia tiene una arquitectura colonial típica, con una fachada de piedra y un interior decorado con frescos y esculturas.</p>
+                        <p class="mb-0">La Parroquia San Juan es una iglesia católica ubicada en el centro de Santo
+                            Domingo, Ecuador. Fue construida en el siglo XVI y es uno de los edificios religiosos más
+                            antiguos de la ciudad. La iglesia tiene una arquitectura colonial típica, con una fachada de
+                            piedra y un interior decorado con frescos y esculturas.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia2.jpg"
                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Capilla San José</h5>
-                    
+                    <h5 class="mb-0">Capilla San José - 1014</h5>
+
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">La Capilla San José es una iglesia católica ubicada en el barrio de Quito Loma, Santo Domingo, Ecuador. Fue construida en el siglo XIX y es una de las iglesias más pequeñas de la ciudad. La iglesia tiene una arquitectura sencilla, con una fachada de ladrillo y un interior acogedor.</p>
+                        <p class="mb-0">La Capilla San José es una iglesia católica ubicada en el barrio de Quito Loma,
+                            Santo Domingo, Ecuador. Fue construida en el siglo XIX y es una de las iglesias más pequeñas
+                            de la ciudad. La iglesia tiene una arquitectura sencilla, con una fachada de ladrillo y un
+                            interior acogedor.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia3.webp"
                         style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Iglesia Santa María</h5>
-                    
+                    <h5 class="mb-0">Iglesia Santa María - 1015</h5>
+
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">La Iglesia Santa María es una iglesia católica ubicada en el barrio de La Florida, Santo Domingo, Ecuador. Fue construida en el siglo XX y es una de las iglesias más grandes de la ciudad. La iglesia tiene una arquitectura moderna, con una fachada de vidrio y un interior espacioso.</p>
+                        <p class="mb-0">La Iglesia Santa María es una iglesia católica ubicada en el barrio de La
+                            Florida, Santo Domingo, Ecuador. Fue construida en el siglo XX y es una de las iglesias más
+                            grandes de la ciudad. La iglesia tiene una arquitectura moderna, con una fachada de vidrio y
+                            un interior espacioso.</p>
                     </div>
                 </div>
                 <div class="matriculas-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia4.jpg"
                         style="width: 80px; height: 80px;">
                     <h5 class="mb-0">Parroquia de la Resurrección</h5>
-                    
+
                     <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">La Parroquia de la Resurrección es una iglesia católica ubicada en el barrio de Algarrobo, Santo Domingo, Ecuador. Fue construida en el siglo XXI y es una de las iglesias más nuevas de la ciudad. La iglesia tiene una arquitectura contemporánea, con una fachada de hormigón y un interior minimalista..</p>
+                        <p class="mb-0">La Parroquia de la Resurrección es una iglesia católica ubicada en el barrio de
+                            Algarrobo, Santo Domingo, Ecuador. Fue construida en el siglo XXI y es una de las iglesias
+                            más nuevas de la ciudad. La iglesia tiene una arquitectura contemporánea, con una fachada de
+                            hormigón y un interior minimalista..</p>
                     </div>
                 </div>
             </div>
@@ -243,16 +267,34 @@
 
 
     <!-- Footer Start -->
+    <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
+            <!-- Primera fila -->
             <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
-                <a class="btn btn-link" href="cursos.php">Sacramentos</a>
-                <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
-                <a class="btn btn-link" href="catequista.php">Catequistas</a>
-                <a class="btn btn-link" href="matriculas.php">Matriculas</a>
-            </div>
+                <!-- Columna 1 -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
+                    <a class="btn btn-link" href="parroquias.php">Parroquias</a>
+                    <a class="btn btn-link" href="cursos.php">Sacramentos</a>
+                    <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+                </div>
+                <!-- Columna 2 -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <br> <br>
+                    <a class="btn btn-link" href="vista.php">Vista</a>
+                    <a class="btn btn-link" href="catequista.php">Catequistas</a>
+                    <a class="btn btn-link" href="matriculas.php">Matriculas</a>
+                </div>
+                <!-- Columna 3 -->
+                <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
+                <div class="col-lg-6 col-md-12 text-end">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
+                        <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
+                    </span>
+                </div>
+                <!-- Fin de la nueva sección para la cruz sin fondo -->
             </div>
         </div>
     </div>

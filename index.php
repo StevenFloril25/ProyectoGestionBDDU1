@@ -121,6 +121,7 @@
     <!-- Carousel End -->
 
 
+
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -177,43 +178,58 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                    <h1 class="mb-4">Welcome to eLEARNING</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
-                    </p>
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Información</h6>
+                    <h1 class="mb-4">¿Qué es la catequesis?</h1>
+                    <p class="mb-4 text-justify justify-content">
+                        La catequesis es un proceso de formación espiritual que nos ayuda a conocer a Cristo y a vivir
+                        su mensaje. A través de la catequesis, los niños y niñas aprenden sobre los fundamentos de la fe
+                        católica, así como sobre los valores y virtudes cristianos. La catequesis es un proceso que dura
+                        varios años y que culmina con la recepción de los sacramentos de la Primera Comunión y la
+                        Confirmación. 
+                    </p>La Primera Comunión es el sacramento que nos permite recibir por primera vez el
+                        Cuerpo y la Sangre de Cristo. Es un momento de gran alegría y compromiso para los niños y niñas,
+                        que se convierten en miembros activos de la Iglesia. La Confirmación es el sacramento que nos
+                        fortalece con el don del Espíritu Santo. Es un momento de renovación de la fe y de compromiso
+                        con la Iglesia y con la sociedad. 
                 </div>
+
             </div>
         </div>
     </div>
     <!-- About End -->
 
-      <!-- Footer Start -->
-      <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
-                <a class="btn btn-link" href="cursos.php">Sacramentos</a>
-                <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
-                <a class="btn btn-link" href="asistencia.php">Catequistas</a>
-                <a class="btn btn-link" href="matriculas.php">Matriculas</a>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <!-- Primera fila -->
+            <div class="row g-5">
+                <!-- Columna 1 -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
+                    <a class="btn btn-link" href="parroquias.php">Parroquias</a>
+                    <a class="btn btn-link" href="cursos.php">Sacramentos</a>
+                    <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+                </div>
+                <!-- Columna 2 -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <br> <br>
+                    <a class="btn btn-link" href="vista.php">Vista</a>
+                    <a class="btn btn-link" href="catequista.php">Catequistas</a>
+                    <a class="btn btn-link" href="matriculas.php">Matriculas</a>
+                </div>
+                <!-- Columna 3 -->
+                <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
+                <div class="col-lg-6 col-md-12 text-end">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
+                        <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
+                    </span>
+                </div>
+                <!-- Fin de la nueva sección para la cruz sin fondo -->
             </div>
-
-            <!-- Nueva sección para la cruz sin fondo -->
-            <div class="col-lg-9 col-md-6 text-end">
-                <!-- Ajustar el tamaño y color de la cruz según tus preferencias -->
-                <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
-                    <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
-                </span>
-            </div>
-            <!-- Fin de la nueva sección para la cruz sin fondo -->
         </div>
     </div>
-</div>
+
 
     <!-- Footer End -->
 

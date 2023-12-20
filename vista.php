@@ -101,19 +101,23 @@ $conexionBD = null;
                 </div>
                 <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">CATEQUISTA</a>
 
-                <a href="matriculas.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">MATRÍCULAS<i
-                        class="fa fa-arrow-right ms-3"></i></a>
+                <a href="matriculas.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">MATRÍCULAS</a>
 
             </div>
         </nav>
         <!-- Navbar End -->
 
         <!-- Header Start -->
-        <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <!-- Header Start -->
+        <div class="container-fluid bg-dark">
             <div class="container py-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-10 text-center">
-                        <h1 class="display-3 text-white animated slideInDown">Búsqueda Catequista</h1>
+                        <br><br>
+                        <h1 class="mb-5 text-white">Vista Búsqueda</h1>
+                        <nav aria-label="breadcrumb">
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -131,14 +135,14 @@ $conexionBD = null;
                 </div>
 
                 <form action="vista.php" method="GET">
-    <div class="mb-3">
-        <label for="nombreBusqueda" class="form-label">Buscar por nombre:</label>
-        <input type="text" class="form-control" id="nombreBusqueda" name="nombreBusqueda"
-            placeholder="Ingrese el nombre" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ\s]+" 
-            title="Ingresa solo letras (sin números ni caracteres especiales)">
-    </div>
-    <button type="submit" class="btn btn-primary">Buscar</button>
-</form>
+                    <div class="mb-3">
+                        <label for="nombreBusqueda" class="form-label">Buscar por nombre:</label>
+                        <input type="text" class="form-control" id="nombreBusqueda" name="nombreBusqueda"
+                            placeholder="Ingrese el nombre" pattern="[A-Za-záéíóúüñÑÁÉÍÓÚ\s]+"
+                            title="Ingresa solo letras (sin números ni caracteres especiales)">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </form>
 
 
                 <?php if (!empty($resultados)): ?>
@@ -188,8 +192,35 @@ $conexionBD = null;
 
         <!-- matriculas End -->
         <!-- Footer Start -->
+        <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
+                <!-- Primera fila -->
+                <div class="row g-5">
+                    <!-- Columna 1 -->
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
+                        <a class="btn btn-link" href="parroquias.php">Parroquias</a>
+                        <a class="btn btn-link" href="cursos.php">Sacramentos</a>
+                        <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+                    </div>
+                    <!-- Columna 2 -->
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <br> <br>
+                        <a class="btn btn-link" href="vista.php">Vista</a>
+                        <a class="btn btn-link" href="catequista.php">Catequistas</a>
+                        <a class="btn btn-link" href="matriculas.php">Matriculas</a>
+                    </div>
+                    <!-- Columna 3 -->
+                    <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
+                    <div class="col-lg-6 col-md-12 text-end">
+                        <span class="fa-stack fa-lg">
+                            <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
+                            <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
+                        </span>
+                    </div>
+                    <!-- Fin de la nueva sección para la cruz sin fondo -->
+                </div>
             </div>
         </div>
         <!-- Footer End -->
