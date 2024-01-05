@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         $conexion = Cconexion::ConexionBD();
 
         // Preparar la llamada al procedimiento almacenado
-        $sql = "EXEC InsertarNiño @nombre=?, @apellido=?, @edad=?, @telefonopadres=?";
+        $sql = "CALL InsertarNiño(?, ?, ?, ?)";
         $stmt = $conexion->prepare($sql);
         $stmt->bindParam(1, $nombre, PDO::PARAM_STR);
         $stmt->bindParam(2, $apellido, PDO::PARAM_STR);
@@ -120,20 +120,20 @@ if ($conexion) {
     <!-- Navbar End -->
 
     <!-- Header Start -->
-<!-- Header Start -->
-<div class="container-fluid bg-dark">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <br><br> 
-                <h1 class="mb-5 text-white">Matriculas.</h1>
-                <nav aria-label="breadcrumb">
-                    
-                </nav>
+    <!-- Header Start -->
+    <div class="container-fluid bg-dark">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <br><br>
+                    <h1 class="mb-5 text-white">Matriculas.</h1>
+                    <nav aria-label="breadcrumb">
+
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
-</div>
     <!-- Header End -->
 
 
@@ -198,10 +198,10 @@ if ($conexion) {
                     }
 
                     // Validar que la edad sea un número positivo y esté en el rango de 6 a 18 años
-        if (isNaN(edad) || edad <= 0 || edad < 6 || edad > 18) {
-            alert("Ingresa una edad válida en el rango de 6 a 18 años");
-            return false;
-        }
+                    if (isNaN(edad) || edad <= 0 || edad < 6 || edad > 18) {
+                        alert("Ingresa una edad válida en el rango de 6 a 18 años");
+                        return false;
+                    }
 
                     // Validar que el teléfono contenga solo números y tenga 10 dígitos
                     var numeros = /^[0-9]+$/;
@@ -257,37 +257,36 @@ if ($conexion) {
 
             <!-- matriculas End -->
             <!-- Footer Start -->
-          <!-- Footer Start -->
-      <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <!-- Primera fila -->
-        <div class="row g-5">
-            <!-- Columna 1 -->
-            <div class="col-lg-3 col-md-6 text-center">
-                <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
-                <a class="btn btn-link" href="parroquias.php">Parroquias</a>
-                <a class="btn btn-link" href="cursos.php">Sacramentos</a>
-                <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+            <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="container py-5">
+                    <!-- Primera fila -->
+                    <div class="row g-5">
+                        <!-- Columna 1 -->
+                        <div class="col-lg-3 col-md-6 text-center">
+                            <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
+                            <a class="btn btn-link" href="parroquias.php">Parroquias</a>
+                            <a class="btn btn-link" href="cursos.php">Sacramentos</a>
+                            <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+                        </div>
+                        <!-- Columna 2 -->
+                        <div class="col-lg-3 col-md-6 text-center">
+                            <br> <br>
+                            <a class="btn btn-link" href="vista.php">Búsqueda</a>
+                            <a class="btn btn-link" href="catequista.php">Catequistas</a>
+                            <a class="btn btn-link" href="matriculas.php">Matriculas</a>
+                        </div>
+                        <!-- Columna 3 -->
+                        <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
+                        <div class="col-lg-6 col-md-12 text-end">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
+                                <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
+                            </span>
+                        </div>
+                        <!-- Fin de la nueva sección para la cruz sin fondo -->
+                    </div>
+                </div>
             </div>
-            <!-- Columna 2 -->
-            <div class="col-lg-3 col-md-6 text-center">
-                <br> <br> 
-                <a class="btn btn-link" href="vista.php">Búsqueda</a>
-                <a class="btn btn-link" href="catequista.php">Catequistas</a>
-                <a class="btn btn-link" href="matriculas.php">Matriculas</a>
-            </div>
-            <!-- Columna 3 -->
-            <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
-            <div class="col-lg-6 col-md-12 text-end">
-                <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
-                    <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
-                </span>
-            </div>
-            <!-- Fin de la nueva sección para la cruz sin fondo -->
-        </div>
-    </div>
-</div>
             <!-- Footer End -->
 
 

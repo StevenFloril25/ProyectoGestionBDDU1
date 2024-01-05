@@ -4,16 +4,18 @@ class Cconexion {
 
    public static function ConexionBD() {
 
-        $host = 'Localhost';
+        $host = 'localhost';  // Cambiar a minúsculas
         $dbname = 'ProyectoGestionBDDu1';
-        $username = 'sa';
-        $pasword = '1234';
-        $puerto = '1433';
+        $username = 'root';  // Reemplazar con tu nombre de usuario de MySQL
+        $password = 'administrador';  // Reemplazar con tu contraseña de MySQL
+        $puerto = '3306';  // Puerto predeterminado para MySQL
+
         try {
-            $conn = new PDO("sqlsrv:Server=$host,$puerto;Database=$dbname", $username, $pasword);
+            $conn = new PDO("mysql:host=$host;port=$puerto;dbname=$dbname", $username, $password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo "";
         } catch (PDOException $exp) {
-            echo "No se logró conectar correctamente con la base de datos: $dbname, error: $exp";
+            echo "No se logró conectar correctamente con la base de datos: $dbname, error: " . $exp->getMessage();
         }
 
         return $conn;

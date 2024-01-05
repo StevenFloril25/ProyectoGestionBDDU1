@@ -10,7 +10,7 @@ function eliminarNiño($idNiño)
     if ($conexion) {
         try {
             // Preparar la llamada al procedimiento almacenado
-            $sql = "EXEC EliminarNiño @id_niño=?";
+            $sql = "CALL EliminarNiño(?)";
             $stmt = $conexion->prepare($sql);
             $stmt->bindParam(1, $idNiño, PDO::PARAM_INT);
 
