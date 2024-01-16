@@ -7,7 +7,7 @@ class Cconexion {
         $host = 'localhost';  // Cambiar a minúsculas
         $dbname = 'ProyectoGestionBDDu1';
         $username = 'root';  // Reemplazar con tu nombre de usuario de MySQL
-        $password = 'administrador';  // Reemplazar con tu contraseña de MySQL
+        $password = 'datos';  // Reemplazar con tu contraseña de MySQL
         $puerto = '3306';  // Puerto predeterminado para MySQL
 
         try {

@@ -58,15 +58,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="parroquias.php" class="nav-item nav-link active">Parroquias</a>
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
-                <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
                 <a href="vista.php" class="nav-item nav-link">Búsqueda</a>
-
+                <div class="nav-item dropdown">
+                    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Matrícula</a>
+                    <div class="dropdown-menu" aria-labelledby="matriculaDropdown">
+                        <a href="catequista.php" class="dropdown-item">CATEQUISTA</a>
+                        <a href="matriculas.php" class="dropdown-item">MATRÍCULAS</a>
+                        <a href="guias.php" class="dropdown-item">Guias Espirituales</a>
+                        <a href="parroquias.php" class="dropdown-item">Parroquias</a>
+                    </div>
+                </div>
+                
             </div>
-            <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">CATEQUISTA</a>
-            <a href="matriculas.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">MATRÍCULAS</a>
         </div>
+
     </nav>
     <!-- Navbar End -->
 
