@@ -61,19 +61,18 @@
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="vista.php" class="nav-item nav-link">Búsqueda</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MATRÍCULAS</a>
+                    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">MATRÍCULAS</a>
                     <div class="dropdown-menu w-100" aria-labelledby="matriculaDropdown">
-    <a href="catequista.php" class="dropdown-item">Catequistas</a>
-    <a href="matriculas.php" class="dropdown-item">Matrículas</a>
-    <a href="guias.php" class="dropdown-item">Padres</a>
-    <a href="parroquias.php" class="dropdown-item">Parroquias</a>
-</div>
-
+                        <a href="catequista.php" class="dropdown-item">Catequistas</a>
+                        <a href="matriculas.php" class="dropdown-item">Matrículas</a>
+                        <a href="guias.php" class="dropdown-item">Padres</a>
+                        <a href="parroquias.php" class="dropdown-item">Parroquias</a>
+                    </div>
                 </div>
-                
             </div>
         </div>
-
     </nav>
     <!-- Navbar End -->
 
@@ -192,12 +191,12 @@
                         su mensaje. A través de la catequesis, los niños y niñas aprenden sobre los fundamentos de la fe
                         católica, así como sobre los valores y virtudes cristianos. La catequesis es un proceso que dura
                         varios años y que culmina con la recepción de los sacramentos de la Primera Comunión y la
-                        Confirmación. 
+                        Confirmación.
                     </p>La Primera Comunión es el sacramento que nos permite recibir por primera vez el
-                        Cuerpo y la Sangre de Cristo. Es un momento de gran alegría y compromiso para los niños y niñas,
-                        que se convierten en miembros activos de la Iglesia. La Confirmación es el sacramento que nos
-                        fortalece con el don del Espíritu Santo. Es un momento de renovación de la fe y de compromiso
-                        con la Iglesia y con la sociedad. 
+                    Cuerpo y la Sangre de Cristo. Es un momento de gran alegría y compromiso para los niños y niñas,
+                    que se convierten en miembros activos de la Iglesia. La Confirmación es el sacramento que nos
+                    fortalece con el don del Espíritu Santo. Es un momento de renovación de la fe y de compromiso
+                    con la Iglesia y con la sociedad.
                 </div>
 
             </div>
