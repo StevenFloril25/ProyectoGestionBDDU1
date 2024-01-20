@@ -13,14 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         // Obtener la conexión
         $conexion = Cconexion::ConexionBD();
 
-        // Preparar la llamada al procedimiento almacenado
-        $sql = "EXEC EditarCatequista @IdCatequista=?, @Nombre=?, @Apellido=?, @Telefono=?, @IdIglesia=?";
+        // Preparar la consulta
+        $sql = "UPDATE Catequista SET nombre = ?, apellido = ?, telefono = ?, id_iglesia = ? WHERE id_catequista = ?";
         $stmt = $conexion->prepare($sql);
-        $stmt->bindParam(1, $id_catequista, PDO::PARAM_INT);
-        $stmt->bindParam(2, $nombre, PDO::PARAM_STR);
-        $stmt->bindParam(3, $apellido, PDO::PARAM_STR);
-        $stmt->bindParam(4, $telefono, PDO::PARAM_STR);
-        $stmt->bindParam(5, $id_iglesia, PDO::PARAM_INT);
+        $stmt->bindParam(1, $nombre, PDO::PARAM_STR);
+        $stmt->bindParam(2, $apellido, PDO::PARAM_STR);
+        $stmt->bindParam(3, $telefono, PDO::PARAM_STR);
+        $stmt->bindParam(4, $id_iglesia, PDO::PARAM_INT);
+        $stmt->bindParam(5, $id_catequista, PDO::PARAM_INT);
 
         // Ejecutar la consulta
         $stmt->execute();
@@ -58,6 +58,7 @@ if (isset($_GET["id"])) {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -188,7 +189,6 @@ if (isset($_GET["id"])) {
 
                 <div class="mb-3 text-center">
                     <button type="submit" name="submit" class="btn btn-info text-white m-2">Actualizar</button>
-                    <a href="catequista.php" class="btn btn-secondary text-white m-2">Regresar</a>
 
                 </div>
             </form>

@@ -61,13 +61,14 @@
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="vista.php" class="nav-item nav-link">Búsqueda</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Matrícula</a>
-                    <div class="dropdown-menu" aria-labelledby="matriculaDropdown">
-                        <a href="catequista.php" class="dropdown-item">CATEQUISTA</a>
-                        <a href="matriculas.php" class="dropdown-item">MATRÍCULAS</a>
-                        <a href="guias.php" class="dropdown-item">Guias Espirituales</a>
-                        <a href="parroquias.php" class="dropdown-item">Parroquias</a>
-                    </div>
+                    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MATRÍCULAS</a>
+                    <div class="dropdown-menu w-100" aria-labelledby="matriculaDropdown">
+    <a href="catequista.php" class="dropdown-item">Catequistas</a>
+    <a href="matriculas.php" class="dropdown-item">Matrículas</a>
+    <a href="guias.php" class="dropdown-item">Padres</a>
+    <a href="parroquias.php" class="dropdown-item">Parroquias</a>
+</div>
+
                 </div>
                 
             </div>

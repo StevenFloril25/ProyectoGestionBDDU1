@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         $conexion = Cconexion::ConexionBD();
 
         // Preparar la llamada al procedimiento almacenado
-        $sql = "EXEC InsertarCatequista @Nombre=?, @Apellido=?, @Telefono=?, @IdIglesia=?";
+        $sql = "CALL InsertarCatequista(?, ?, ?, ?)";
         $stmt = $conexion->prepare($sql);
         $stmt->bindParam(1, $nombre, PDO::PARAM_STR);
         $stmt->bindParam(2, $apellido, PDO::PARAM_STR);
@@ -44,7 +44,6 @@ if ($conexion) {
 } else {
     echo "Error al cerrar la conexión";
 }
-
 ?>
 
 

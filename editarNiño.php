@@ -211,7 +211,6 @@ if (isset($_GET["id"])) {
                     <!-- Botón para enviar el formulario -->
                     <div class="mb-3 text-center">
                         <button type="submit" name="submit" class="btn btn-info text-white m-2">Actualizar</button>
-                        <a href="matriculas.php" class="btn btn-secondary text-white m-2">Regresar</a>
 
                     </div>
                 </form>

@@ -1,7 +1,7 @@
 <?php
 include_once "conexion.php";
 
-function eliminarCatequista($idCatequista)
+function eliminarPadre($idPadre)
 {
     $mensajeExito = '';
     $mensajeError = '';
@@ -14,19 +14,19 @@ function eliminarCatequista($idCatequista)
         }
 
         // Mensaje de depuración
-        $mensajeExito = "Eliminando el catequista ";
+        $mensajeExito = "Eliminando el padre ";
 
-        $sql = "DELETE FROM Catequista WHERE id_catequista = ?";
+        $sql = "CALL EliminarPadre(?)";
         $stmt = $conexion->prepare($sql);
-        $stmt->bindParam(1, $idCatequista, PDO::PARAM_INT);
+        $stmt->bindParam(1, $idPadre, PDO::PARAM_INT);
         $stmt->execute();
 
         $rowCount = $stmt->rowCount();
 
         if ($rowCount > 0) {
-            $mensajeExito = "Registro de Catequista eliminado correctamente.";
+            $mensajeExito = "Registro de Padre eliminado correctamente.";
         } else {
-            $mensajeError = "No se encontró ningún registro de Catequista para eliminar.";
+           // $mensajeError = "No se encontró ningún registro de Padre para eliminar.";
         }
 
     } catch (PDOException $e) {
@@ -43,12 +43,12 @@ function eliminarCatequista($idCatequista)
     if ($mensajeError !== '') {
         echo "alert('$mensajeError');";
     }
-    echo "window.location.href = 'catequista.php';"; // Redirige a la página de catequistas
+    echo "window.location.href = 'guias.php';"; // Redirige a la página de padres
     echo "</script>";
-}
+}   
 
-if (isset($_GET['id_catequista']) && is_numeric($_GET['id_catequista'])) {
-    $idCatequista = $_GET['id_catequista'];
-    eliminarCatequista($idCatequista);
+if (isset($_GET['id_padre']) && is_numeric($_GET['id_padre'])) {
+    $idPadre = $_GET['id_padre'];
+    eliminarPadre($idPadre);
 }
 ?>
