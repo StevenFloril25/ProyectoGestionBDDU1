@@ -1,3 +1,52 @@
+<?php
+include_once "conexion.php";
+
+// Manejar el envío del formulario
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
+    // Obtener los datos del formulario
+    $nombre = $_POST["nombre"];
+    $direccion = $_POST["direccion"];
+    $telefono = $_POST["telefono"];
+    $correo_electronico = $_POST["correo_electronico"];
+
+    try {
+        // Obtener la conexión
+        $conexion = Cconexion::ConexionBD();
+
+        // Preparar la llamada al procedimiento almacenado
+        $sql = "CALL InsertarIglesia(?, ?, ?, ?)";
+        $stmt = $conexion->prepare($sql);
+        $stmt->bindParam(1, $nombre, PDO::PARAM_STR);
+        $stmt->bindParam(2, $direccion, PDO::PARAM_STR);
+        $stmt->bindParam(3, $telefono, PDO::PARAM_STR);
+        $stmt->bindParam(4, $correo_electronico, PDO::PARAM_STR);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+
+        echo "";
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    } finally {
+        // Cerrar la conexión
+        if ($conexion) {
+            $conexion = null;
+        }
+    }
+}
+
+// Mostrar datos en la tabla
+$conexion = Cconexion::ConexionBD();
+
+if ($conexion) {
+    $sql = "SELECT * FROM Iglesia";
+    $resultado = $conexion->query($sql);
+} else {
+    echo "Error al cerrar la conexión";
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,13 +83,6 @@
 </head>
 
 <body>
-    <?php
-    include_once("conexion.php");
-    // Crea una instancia de la clase Cconexion
-    $conexion = new Cconexion();
-    // Llama al método ConexionBD en la instancia creada
-    $conexion->ConexionBD();
-    ?>
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -59,12 +101,13 @@
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
-         <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="vista.php" class="nav-item nav-link">Búsqueda</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Matrícula</a>
+                    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Matrícula</a>
                     <div class="dropdown-menu" aria-labelledby="matriculaDropdown">
                         <a href="catequista.php" class="dropdown-item">CATEQUISTA</a>
                         <a href="matriculas.php" class="dropdown-item">MATRÍCULAS</a>
@@ -72,7 +115,7 @@
                         <a href="parroquias.php" class="dropdown-item">Parroquias</a>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </nav>
@@ -95,178 +138,100 @@
 
     <!-- Header End -->
 
-    <!-- cursos Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Parroquias</h6>
-                <h1 class="mb-5">Encuentra una parroquia cerca de tu localidad.</h1>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/iglesia1.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h5 class="mb-4">Parroquia San Juan</h5>
-                        </div>
-                        <div class="d-flex border-top">
 
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>Calle 24 de Mayo y Avenida Loja, Barrio La
-                                Florida</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
-                                (02) 276 0987</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/iglesia3.webp" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h5 class="mb-4">Iglesia Santa María</h5>
-                        </div>
-                        <div class="d-flex border-top">
-
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>Calle Sucre y Avenida Quito, Barrio Quito
-                                Loma</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
-                                (02) 276 1234</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/iglesia4.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h5 class="mb-4">Capilla San José</h5>
-                        </div>
-                        <div class="d-flex border-top">
-
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>Calle Bolívar y Avenida Guayaquil, Barrio
-                                Centro</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
-                                (02) 276 2345</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/iglesia2.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h5 class="mb-4">Parroquia de la Resurrección</h5>
-                        </div>
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>Calle Loja y Avenida Simón Bolívar, Barrio
-                                Algarrobo</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>
-                                (02) 276 5432</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- cursos End -->
-
-    <!-- MAPA START -->
-    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-        <h6 class="section-title bg-white text-center text-primary px-3">Parroquias</h6>
-        <h1 class="mb-5">Mapa Santo Domingo.</h1>
-    </div>
-    <div style="text-align: center;">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31918.23767610028!2d-79.176192!3d-0.252067!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d546535730a17d%3A0xcef17541041b9f63!2sSanto%20Domingo!5e0!3m2!1ses-419!2sec!4v1702935583144!5m2!1ses-419!2sec"
-            width="964.8px" height="500px" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <!-- MAPA END -->
 
     <!-- matriculas Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Parroquias</h6>
-                <h1 class="mb-5">Antecedentes.</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">parroquías</h6>
+                <h1 class="mb-5">Ingreso Parroquías</h1>
             </div>
-            <div class="owl-carousel matriculas-carousel position-relative">
-                <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia1.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Parroquia San Juan - 1013</h5>
 
-                    <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">La Parroquia San Juan es una iglesia católica ubicada en el centro de Santo
-                            Domingo, Ecuador. Fue construida en el siglo XVI y es uno de los edificios religiosos más
-                            antiguos de la ciudad. La iglesia tiene una arquitectura colonial típica, con una fachada de
-                            piedra y un interior decorado con frescos y esculturas.</p>
+            <!-- Formulario Matricula -->
+            <form id="iglesia-form" action="parroquias.php" method="POST" class="col-md-6 mx-auto"
+                onsubmit="return validarFormulario()">
+                <!-- Campos del formulario -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" pattern="[A-Za-z]+"
+                            title="Ingresa solo letras" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="direccion" class="form-label">Dirección:</label>
+                        <input type="text" id="direccion" name="direccion" class="form-control" required>
                     </div>
                 </div>
-                <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia2.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Capilla San José - 1014</h5>
-
-                    <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">La Capilla San José es una iglesia católica ubicada en el barrio de Quito Loma,
-                            Santo Domingo, Ecuador. Fue construida en el siglo XIX y es una de las iglesias más pequeñas
-                            de la ciudad. La iglesia tiene una arquitectura sencilla, con una fachada de ladrillo y un
-                            interior acogedor.</p>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="telefono" class="form-label">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono" class="form-control" pattern="[0-9]{10}"
+                            title="Ingresa un número de 10 dígitos y no negativos" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="correo_electronico" class="form-label">Correo Electrónico:</label>
+                        <input type="email" id="correo_electronico" name="correo_electronico" class="form-control"
+                            required>
                     </div>
                 </div>
-                <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia3.webp"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Iglesia Santa María - 1015</h5>
-
-                    <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">La Iglesia Santa María es una iglesia católica ubicada en el barrio de La
-                            Florida, Santo Domingo, Ecuador. Fue construida en el siglo XX y es una de las iglesias más
-                            grandes de la ciudad. La iglesia tiene una arquitectura moderna, con una fachada de vidrio y
-                            un interior espacioso.</p>
-                    </div>
+                <div class="mb-3 text-center">
+                    <button type="submit" name="submit" class="btn btn-info text-white m-2">Agregar Iglesia</button>
                 </div>
-                <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/iglesia4.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Parroquia de la Resurrección</h5>
+            </form>
 
-                    <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">La Parroquia de la Resurrección es una iglesia católica ubicada en el barrio de
-                            Algarrobo, Santo Domingo, Ecuador. Fue construida en el siglo XXI y es una de las iglesias
-                            más nuevas de la ciudad. La iglesia tiene una arquitectura contemporánea, con una fachada de
-                            hormigón y un interior minimalista..</p>
-                    </div>
-                </div>
+            <!-- Mostrar los datos en la tabla -->
+            <div class="table-responsive">
+                <table id="tabla-iglesias" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID Iglesia</th>
+                            <th>Nombre</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                            <th>Correo Electrónico</th>
+                            <th class="text-center">Editar y Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="iglesias-list">
+                        <?php
+                        // Verificar si hay resultados antes de mostrar la tabla
+                        if ($resultado) {
+                            while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<tr>";
+                                echo "<td>" . $fila['id_iglesia'] . "</td>";
+                                echo "<td>" . $fila['nombre'] . "</td>";
+                                echo "<td>" . $fila['direccion'] . "</td>";
+                                echo "<td>" . $fila['telefono'] . "</td>";
+                                echo "<td>" . $fila['correo_electronico'] . "</td>";
+                                echo "<td class='text-center'>";
+
+                                // Botón Editar
+                                echo "<a class='btn btn-info rounded-circle mx-1' href='editarIglesia.php?id={$fila['id_iglesia']}' title='Editar'>
+                        <i class='bi bi-journal text-light'></i>
+                    </a>";
+
+                                // Botón Eliminar
+                                echo "<a class='btn btn-secondary rounded-circle mx-1' href='eliminarIglesia.php?id_iglesia={$fila['id_iglesia']}' 
+                        onclick='return confirm(\"¿Estás seguro de que deseas eliminar este registro?\")' title='Eliminar'>
+                        <i class='bi bi-x text-light'></i>
+                    </a>";
+
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='6'>No hay iglesias registradas.</td></tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+
+
+
     <!-- matriculas End -->
 
 
