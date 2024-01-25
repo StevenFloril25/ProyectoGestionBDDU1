@@ -63,10 +63,11 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown"
                         role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">MATRÍCULAS</a>
+                        aria-expanded="false">REGISTROS</a>
                     <div class="dropdown-menu w-100" aria-labelledby="matriculaDropdown">
                         <a href="catequista.php" class="dropdown-item">Catequistas</a>
-                        <a href="matriculas.php" class="dropdown-item">Matrículas</a>
+                        <a href="matriculas.php" class="dropdown-item">Niños</a>
+                        <a href="aula.php" class="dropdown-item">Aulas</a>
                         <a href="guias.php" class="dropdown-item">Padres</a>
                         <a href="parroquias.php" class="dropdown-item">Parroquias</a>
                     </div>

@@ -3,51 +3,51 @@ include_once "conexion.php";
 
 // Manejar el envío del formulario
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
-    $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
-    $apellido = isset($_POST["apellido"]) ? trim($_POST["apellido"]) : "";
-    $telefono = isset($_POST["telefono"]) ? trim($_POST["telefono"]) : "";
-    $correo_electronico = isset($_POST["correo"]) ? trim($_POST["correo"]) : "";
-    $id_iglesia = isset($_POST["iglesia"]) ? 1 : 0; // 1 si es miembro, 0 si no lo es
+  $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
+  $apellido = isset($_POST["apellido"]) ? trim($_POST["apellido"]) : "";
+  $telefono = isset($_POST["telefono"]) ? trim($_POST["telefono"]) : "";
+  $correo_electronico = isset($_POST["correo"]) ? trim($_POST["correo"]) : "";
+  $id_iglesia = isset($_POST["iglesia"]) ? 1 : 0; // 1 si es miembro, 0 si no lo es
 
-    // Validar que los campos requeridos no estén vacíos
-    if (empty($nombre) || empty($apellido) || empty($telefono)) {
-        echo "Error: Los campos Nombre, Apellido y Teléfono son obligatorios.";
-        exit();
+  // Validar que los campos requeridos no estén vacíos
+  if (empty($nombre) || empty($apellido) || empty($telefono)) {
+    echo "Error: Los campos Nombre, Apellido y Teléfono son obligatorios.";
+    exit();
+  }
+
+  try {
+    // Obtener la conexión
+    $conexion = Cconexion::ConexionBD();
+
+    // Preparar la llamada al procedimiento almacenado
+    $sql = "CALL InsertarPadre(?, ?, ?, ?, ?)";
+    $stmt = $conexion->prepare($sql);
+    $stmt->bindParam(1, $nombre, PDO::PARAM_STR);
+    $stmt->bindParam(2, $apellido, PDO::PARAM_STR);
+    $stmt->bindParam(3, $telefono, PDO::PARAM_STR);
+    $stmt->bindParam(4, $correo_electronico, PDO::PARAM_STR);
+    $stmt->bindParam(5, $id_iglesia, PDO::PARAM_INT);
+    $stmt->execute();
+
+    echo " ";
+  } catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+  } finally {
+    // Cerrar la conexión
+    if ($conexion) {
+      $conexion = null;
     }
-
-    try {
-        // Obtener la conexión
-        $conexion = Cconexion::ConexionBD();
-
-        // Preparar la llamada al procedimiento almacenado
-        $sql = "CALL InsertarPadre(?, ?, ?, ?, ?)";
-        $stmt = $conexion->prepare($sql);
-        $stmt->bindParam(1, $nombre, PDO::PARAM_STR);
-        $stmt->bindParam(2, $apellido, PDO::PARAM_STR);
-        $stmt->bindParam(3, $telefono, PDO::PARAM_STR);
-        $stmt->bindParam(4, $correo_electronico, PDO::PARAM_STR);
-        $stmt->bindParam(5, $id_iglesia, PDO::PARAM_INT);
-        $stmt->execute();
-
-        echo " ";
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    } finally {
-        // Cerrar la conexión
-        if ($conexion) {
-            $conexion = null;
-        }
-    }
+  }
 }
 
 // Mostrar datos en la tabla
 $conexion = Cconexion::ConexionBD();
 
 if ($conexion) {
-    $sql = "SELECT * FROM Padre";
-    $resultado = $conexion->query($sql);
+  $sql = "SELECT * FROM Padre";
+  $resultado = $conexion->query($sql);
 } else {
-    echo "Error al cerrar la conexión";
+  echo "Error al cerrar la conexión";
 }
 
 ?>
@@ -167,16 +167,30 @@ if ($conexion) {
             <input type="text" id="telefono" name="telefono" class="form-control" pattern="[0-9]{10}"
               title="Ingresa un número de 10 dígitos y no negativos" required>
           </div>
-       
-          <div class="col-md-6">
+
+          <div class="col-md-6 position-relative">
             <label for="iglesia" class="form-label">Iglesia:</label>
-            <input type="text" id="iglesia" name="iglesia" class="form-control" pattern="[0-9]+"
-              title="Ingresa solo el número del ID" required>
+            <div class="input-group">
+              <select id="iglesia" name="iglesia" class="form-select" required>
+                <option value="" disabled selected hidden>Selecciona una iglesia</option>
+                <option value="Parroquia San Juan">Parroquia San Juan</option>
+                <option value="Iglesia Santa María">Iglesia Santa María</option>
+                <option value="Capilla San José">Capilla San José</option>
+                <option value="Parroquia de la Resurrección">Parroquia de la Resurrección</option>
+              </select>
+            </div>
           </div>
+
+          <script>
+            $('.dropdown-menu a').on('click', function () {
+              $('#iglesia').val($(this).text());
+            });
+          </script>
+
           <div class="col-md-12">
             <label for="correo" class="form-label">Correo Electrónico:</label>
-            <input type="text" id="correo" name="correo" class="form-control"
-              title="Ingresa solo el número del ID" required>
+            <input type="text" id="correo" name="correo" class="form-control" title="Ingresa solo el número del ID"
+              required>
           </div>
         </div>
         <div class="mb-3 text-center">
@@ -185,58 +199,58 @@ if ($conexion) {
       </form>
 
 
-    <!-- Mostrar los datos en la tabla -->
-<div class="table-responsive">
-  <table id="tabla-padre" class="table table-striped">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Teléfono</th>
-        <th>Correo</th>
-        <th>Iglesia</th>
-        <th class="text-center">Editar y Eliminar</th>
-      </tr>
-    </thead>
-    <tbody id="padre-list">
-      <?php
-      // Verificar si hay resultados antes de mostrar la tabla
-      if ($resultado) {
-        while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)) {
-          echo "<tr>";
-          echo "<td>" . $fila['nombre'] . "</td>";
-          echo "<td>" . $fila['apellido'] . "</td>";
-          echo "<td>" . $fila['telefono'] . "</td>";
-          echo "<td>" . $fila['correo_electronico'] . "</td>";
-          echo "<td>" . $fila['id_iglesia'] . "</td>";
-          echo "<td class='text-center'>";
+      <!-- Mostrar los datos en la tabla -->
+      <div class="table-responsive">
+        <table id="tabla-padre" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Teléfono</th>
+              <th>Correo</th>
+              <th>Iglesia</th>
+              <th class="text-center">Editar y Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="padre-list">
+            <?php
+            // Verificar si hay resultados antes de mostrar la tabla
+            if ($resultado) {
+              while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr>";
+                echo "<td>" . $fila['nombre'] . "</td>";
+                echo "<td>" . $fila['apellido'] . "</td>";
+                echo "<td>" . $fila['telefono'] . "</td>";
+                echo "<td>" . $fila['correo_electronico'] . "</td>";
+                echo "<td>" . $fila['id_iglesia'] . "</td>";
+                echo "<td class='text-center'>";
 
-          // Botón Editar
-          echo "<a class='btn btn-info rounded-circle mx-1' href='editarPadre.php?id_padre={$fila['id_padre']}' title='Editar'>
+                // Botón Editar
+                echo "<a class='btn btn-info rounded-circle mx-1' href='editarPadre.php?id_padre={$fila['id_padre']}' title='Editar'>
                     <i class='bi bi-journal text-light'></i>
                 </a>";
 
-          // Botón Eliminar
-          echo "<a class='btn btn-secondary rounded-circle mx-1' href='eliminarPadre.php?id_padre={$fila['id_padre']}' 
+                // Botón Eliminar
+                echo "<a class='btn btn-secondary rounded-circle mx-1' href='eliminarPadre.php?id_padre={$fila['id_padre']}' 
                     onclick='return confirm(\"¿Estás seguro de que deseas eliminar este registro?\")' title='Eliminar'>
                     <i class='bi bi-x text-light'></i>
                 </a>";
 
-          echo "</td>";
-          echo "</tr>";
-        }
-      } else {
-        echo "<tr><td colspan='6'>No hay padres registrados.</td></tr>";
-      }
-      ?>
-    </tbody>
-  </table>
-</div>
-
+                echo "</td>";
+                echo "</tr>";
+              }
+            } else {
+              echo "<tr><td colspan='6'>No hay padres registrados.</td></tr>";
+            }
+            ?>
           </tbody>
         </table>
       </div>
+
+      </tbody>
+      </table>
     </div>
+  </div>
   </div>
 
 
