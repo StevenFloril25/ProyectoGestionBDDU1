@@ -73,7 +73,7 @@ if (isset($_GET["id_aula"])) {
 
 <head>
     <meta charset="utf-8">
-    <title>Editar Niño</title>
+    <title>Editar Aula</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -150,7 +150,7 @@ if (isset($_GET["id_aula"])) {
                 <div class="row justify-content-center">
                     <div class="col-lg-10 text-center">
                         <br><br>
-                        <h1 class="mb-5 text-white">Editar Matrícula.</h1>
+                        <h1 class="mb-5 text-white">Editar Aula.</h1>
                         <nav aria-label="breadcrumb">
 
                         </nav>
@@ -166,7 +166,7 @@ if (isset($_GET["id_aula"])) {
             <div class="container">
                 <div class="text-center">
                     <h6 class="section-title bg-white text-center text-primary px-3">edición</h6>
-                    <h1 class="mb-5">Niños Catecismo</h1>
+                    <h1 class="mb-5">Aula</h1>
                 </div>
                 <!-- Formulario de edición -->
                 <form id="editar-form" action="editarAula.php" method="POST" class="col-md-6 mx-auto">
@@ -174,16 +174,19 @@ if (isset($_GET["id_aula"])) {
                     <input type="hidden" name="id_aula" value="<?php echo $id_aula; ?>">
 
                     <!-- Campos del formulario -->
+                    <!-- Campos del formulario -->
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="nombre_aula" class="form-label">Nombre del Aula:</label>
-                            <input type="text" id="nombre_aula" name="nombre_aula" class="form-control"
-                                value="<?php echo $fila['nombre_aula']; ?>" required>
+                            <input type="text" id="nombre_aula" name="nombre_aula" class="form-control" required
+                                pattern="^[A-Za-záéíóúÁÉÍÓÚüÜñÑ\d\s]+$" title="Ingrese solo letras, números y espacios"
+                                value="<?php echo $fila['nombre_aula']; ?>">
                         </div>
                         <div class="col-md-6">
                             <label for="capacidad_aula" class="form-label">Capacidad del Aula:</label>
-                            <input type="number" id="capacidad_aula" name="capacidad_aula" class="form-control"
-                                value="<?php echo $fila['capacidad']; ?>" required>
+                            <input type="number" id="capacidad_aula" name="capacidad_aula" class="form-control" required
+                                min="20" max="35" pattern="\d+" title="Ingrese solo números positivos entre 20 y 35"
+                                value="<?php echo $fila['capacidad']; ?>">
                         </div>
                     </div>
 
