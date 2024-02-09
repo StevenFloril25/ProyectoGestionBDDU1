@@ -101,21 +101,25 @@ $conexionBD = null;
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="parroquias.php" class="nav-item nav-link active">Parroquias</a>
-                    <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
-                    <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
                     <a href="vista.php" class="nav-item nav-link">Búsqueda</a>
-
+                    <div class="nav-item dropdown">
+                        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">REGISTROS</a>
+                        <div class="dropdown-menu w-100" aria-labelledby="matriculaDropdown">
+                            <a href="aula.php" class="dropdown-item">Aulas</a>
+                            <a href="catequista.php" class="dropdown-item">Catequistas</a>
+                            <a href="matriculas.php" class="dropdown-item">Niños</a>
+                            <a href="guias.php" class="dropdown-item">Padres</a>
+                            <a href="parroquias.php" class="dropdown-item">Parroquias</a>
+                            <a href="cursos.php" class="dropdown-item">Sacramentos</a>
+                        </div>
+                    </div>
                 </div>
-                <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">CATEQUISTA</a>
-
-                <a href="matriculas.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">MATRÍCULAS</a>
-
             </div>
         </nav>
         <!-- Navbar End -->
 
-        <!-- Header Start -->
         <!-- Header Start -->
         <div class="container-fluid bg-dark">
             <div class="container py-5">

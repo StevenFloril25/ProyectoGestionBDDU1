@@ -1,47 +1,21 @@
 <?php
 include_once "conexion.php";
 
-// Manejar el envío del formulario de edición
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
-    $id_iglesia = $_POST["id_iglesia"];
-    $nombre = $_POST["nombre"];
-    $direccion = $_POST["direccion"];
-    $telefono = $_POST["telefono"];
-    $correo_electronico = $_POST["correo_electronico"];
+if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["id"])) {
+    $idSacramento = $_GET["id"];
+
+    // Obtener la conexión
+    $conexion = Cconexion::ConexionBD();
 
     try {
-        // Obtener la conexión
-        $conexion = Cconexion::ConexionBD();
+        // Preparar la consulta para obtener los datos del sacramento por su ID
+        $sql = "SELECT * FROM Sacramento WHERE id_sacramento = ?";
+        $stmt = $conexion->prepare($sql);
+        $stmt->bindParam(1, $idSacramento, PDO::PARAM_INT);
+        $stmt->execute();
 
-        // Verificar si la iglesia existe antes de actualizar
-        $verificar_sql = "SELECT SQL_CALC_FOUND_ROWS 1 FROM Iglesia WHERE id_iglesia = ?";
-        $verificar_stmt = $conexion->prepare($verificar_sql);
-        $verificar_stmt->bindParam(1, $id_iglesia, PDO::PARAM_INT);
-        $verificar_stmt->execute();
-
-        // Obtener el resultado de FOUND_ROWS()
-        $found_rows_stmt = $conexion->query("SELECT FOUND_ROWS()");
-        $existencia = $found_rows_stmt->fetchColumn();
-
-        if ($existencia) {
-            // Preparar la llamada al procedimiento almacenado
-            $sql = "CALL EditarIglesia(?, ?, ?, ?, ?)";
-            $stmt = $conexion->prepare($sql);
-            $stmt->bindParam(1, $id_iglesia, PDO::PARAM_INT);
-            $stmt->bindParam(2, $nombre, PDO::PARAM_STR);
-            $stmt->bindParam(3, $direccion, PDO::PARAM_STR);
-            $stmt->bindParam(4, $telefono, PDO::PARAM_STR);
-            $stmt->bindParam(5, $correo_electronico, PDO::PARAM_STR);
-
-            // Ejecutar la consulta
-            $stmt->execute();
-
-            // Redirigir después de la edición
-            header("Location: parroquias.php");
-            exit();
-        } else {
-            echo "La iglesia con ID $id_iglesia no existe.";
-        }
+        // Obtener los datos del sacramento
+        $datosSacramento = $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     } finally {
@@ -50,34 +24,57 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
             $conexion = null;
         }
     }
+} else {
+    // Redireccionar a la página principal si no se proporciona un ID válido
+    header("Location: cursos.php");
+    exit();
 }
 
-// Verificar si se proporciona un ID para editar el registro
-if (isset($_GET["id"])) {
-    $id_iglesia = $_GET["id"];
-    $conexion = Cconexion::ConexionBD();
+// Manejar el envío del formulario de edición
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
+    // Verificar si los datos del formulario están definidos
+    if (isset($_POST["nombre_sacramento"]) && isset($_POST["descripcion_sacramento"])) {
+        // Obtener los datos del formulario
+        $nombreSacramento = $_POST["nombre_sacramento"];
+        $descripcionSacramento = $_POST["descripcion_sacramento"];
 
-    if ($conexion) {
-        $sql = "SELECT * FROM Iglesia WHERE id_iglesia = ?";
-        $stmt = $conexion->prepare($sql);
-        $stmt->bindParam(1, $id_iglesia, PDO::PARAM_INT);
-        $stmt->execute();
-        $fila = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Obtener la conexión
+        $conexion = Cconexion::ConexionBD();
 
-        if ($fila) {
-            // Mostrar el formulario de edición
+        try {
+            // Preparar la llamada al procedimiento almacenado para editar el sacramento
+            $sqlEditar = "CALL EditarSacramento(?, ?, ?)";
+            $stmtEditar = $conexion->prepare($sqlEditar);
+            $stmtEditar->bindParam(1, $idSacramento, PDO::PARAM_INT);
+            $stmtEditar->bindParam(2, $nombreSacramento, PDO::PARAM_STR);
+            $stmtEditar->bindParam(3, $descripcionSacramento, PDO::PARAM_STR);
+
+            // Ejecutar la consulta
+            $stmtEditar->execute();
+
+            // Redireccionar a la página principal después de la edición
+            header("Location: cursos.php");
+            exit();
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        } finally {
+            // Cerrar la conexión
+            if ($conexion) {
+                $conexion = null;
+            }
         }
+    } else {
+        echo "Error: Los datos del formulario son nulos.";
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Editar Niño</title>
+    <title>Editar Sacramento</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -154,12 +151,13 @@ if (isset($_GET["id"])) {
         <!-- Navbar End -->
 
         <!-- Header Start -->
+        <!-- Header Start -->
         <div class="container-fluid bg-dark">
             <div class="container py-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-10 text-center">
                         <br><br>
-                        <h1 class="mb-5 text-white">Editar Matrícula.</h1>
+                        <h1 class="mb-5 text-white">Editar Sacramento.</h1>
                         <nav aria-label="breadcrumb">
 
                         </nav>
@@ -175,43 +173,27 @@ if (isset($_GET["id"])) {
             <div class="container">
                 <div class="text-center">
                     <h6 class="section-title bg-white text-center text-primary px-3">edición</h6>
-                    <h1 class="mb-5">Niños Catecismo</h1>
+                    <h1 class="mb-5">Sacramento</h1>
                 </div>
 
-                <!-- Formulario de edición -->
-                <form id="editar-form" action="editarIglesia.php" method="POST" class="col-md-6 mx-auto"
-                    onsubmit="return validarFormulario()">
-                    <!-- Campo oculto para almacenar el ID de la iglesia -->
-                    <input type="hidden" name="id_iglesia" value="<?php echo $id_iglesia; ?>">
-
-                    <!-- Campos del formulario -->
+                <!-- Formulario para editar Sacramento -->
+                <form id="editar-sacramento-form" action="editarSacramento.php?id=<?php echo $idSacramento; ?>"
+                    method="POST" class="col-md-6 mx-auto">
+                    <!-- Campos del formulario con los valores actuales del sacramento -->
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="nombre" class="form-label">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre" class="form-control" pattern="[A-Za-z]+"
-                                title="Ingresa solo letras" value="<?php echo $fila['nombre']; ?>" required>
+                            <label for="nombre_sacramento" class="form-label">Nombre Sacramento:</label>
+                            <input type="text" id="nombre_sacramento" name="nombre_sacramento" class="form-control"
+                                required
+                                value="<?php echo isset($datosSacramento['nombre']) ? $datosSacramento['nombre'] : ''; ?>">
                         </div>
                         <div class="col-md-6">
-                            <label for="direccion" class="form-label">Dirección:</label>
-                            <input type="text" id="direccion" name="direccion" class="form-control"
-                                value="<?php echo $fila['direccion']; ?>" required>
+                            <label for="descripcion_sacramento" class="form-label">Descripción Sacramento:</label>
+                            <input type="text" id="descripcion_sacramento" name="descripcion_sacramento"
+                                class="form-control" required
+                                value="<?php echo isset($datosSacramento['descripcion']) ? $datosSacramento['descripcion'] : ''; ?>">
                         </div>
                     </div>
-
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            <label for="telefono" class="form-label">Teléfono:</label>
-                            <input type="text" id="telefono" name="telefono" class="form-control" pattern="[0-9]{10}"
-                                title="Ingresa un número de 10 dígitos" value="<?php echo $fila['telefono']; ?>"
-                                required>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="correo_electronico" class="form-label">Correo Electrónico:</label>
-                            <input type="email" id="correo_electronico" name="correo_electronico" class="form-control"
-                                value="<?php echo $fila['correo_electronico']; ?>" required>
-                        </div>
-                    </div>
-
                     <!-- Botón para enviar el formulario -->
                     <div class="mb-3 text-center">
                         <button type="submit" name="submit" class="btn btn-info text-white m-2">Actualizar</button>
@@ -219,8 +201,6 @@ if (isset($_GET["id"])) {
                 </form>
 
 
-
-                <!-- matriculas End -->
                 <!-- Footer Start -->
                 <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
                     <div class="container py-5">

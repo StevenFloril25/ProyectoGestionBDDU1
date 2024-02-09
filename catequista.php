@@ -95,38 +95,49 @@ if ($conexion) {
     <!-- Spinner End -->
 
 
+
     <!-- Navbar Start -->
-     <div class="collapse navbar-collapse" id="navbarCollapse">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>Iglesia Central</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="vista.php" class="nav-item nav-link">Búsqueda</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Matrícula</a>
-                    <div class="dropdown-menu" aria-labelledby="matriculaDropdown">
-                        <a href="catequista.php" class="dropdown-item">CATEQUISTA</a>
-                        <a href="matriculas.php" class="dropdown-item">MATRÍCULAS</a>
-                        <a href="guias.php" class="dropdown-item">Guias Espirituales</a>
+                    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">REGISTROS</a>
+                    <div class="dropdown-menu w-100" aria-labelledby="matriculaDropdown">
+                        <a href="aula.php" class="dropdown-item">Aulas</a>
+                        <a href="catequista.php" class="dropdown-item">Catequistas</a>
+                        <a href="matriculas.php" class="dropdown-item">Niños</a>
+                        <a href="guias.php" class="dropdown-item">Padres</a>
                         <a href="parroquias.php" class="dropdown-item">Parroquias</a>
+                        <a href="cursos.php" class="dropdown-item">Sacramentos</a>
                     </div>
                 </div>
-                
             </div>
         </div>
+    </nav>
     <!-- Navbar End -->
-<!-- Header Start -->
-<div class="container-fluid bg-dark">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <br><br> 
-                <h1 class="mb-5 text-white">Catequista.</h1>
-                <nav aria-label="breadcrumb">
-                    
-                </nav>
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-dark">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <br><br>
+                    <h1 class="mb-5 text-white">Catequista.</h1>
+                    <nav aria-label="breadcrumb">
+
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
-</div>
     <!-- Header End -->
 
 
@@ -250,60 +261,60 @@ if ($conexion) {
             </div>
         </div>
     </div>
-    
-        
 
-         <!-- matriculas End -->
-           
-        <!-- Footer Start -->
-      <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <!-- Primera fila -->
-        <div class="row g-5">
-            <!-- Columna 1 -->
-            <div class="col-lg-3 col-md-6 text-center">
-                <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
-                <a class="btn btn-link" href="parroquias.php">Parroquias</a>
-                <a class="btn btn-link" href="cursos.php">Sacramentos</a>
-                <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+
+
+    <!-- matriculas End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <!-- Primera fila -->
+            <div class="row g-5">
+                <!-- Columna 1 -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
+                    <a class="btn btn-link" href="parroquias.php">Parroquias</a>
+                    <a class="btn btn-link" href="cursos.php">Sacramentos</a>
+                    <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+                </div>
+                <!-- Columna 2 -->
+                <div class="col-lg-3 col-md-6 text-center">
+                    <br> <br>
+                    <a class="btn btn-link" href="vista.php">Búsqueda</a>
+                    <a class="btn btn-link" href="catequista.php">Catequistas</a>
+                    <a class="btn btn-link" href="matriculas.php">Matriculas</a>
+                </div>
+                <!-- Columna 3 -->
+                <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
+                <div class="col-lg-6 col-md-12 text-end">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
+                        <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
+                    </span>
+                </div>
+                <!-- Fin de la nueva sección para la cruz sin fondo -->
             </div>
-            <!-- Columna 2 -->
-            <div class="col-lg-3 col-md-6 text-center">
-                <br> <br> 
-                <a class="btn btn-link" href="vista.php">Búsqueda</a>
-                <a class="btn btn-link" href="catequista.php">Catequistas</a>
-                <a class="btn btn-link" href="matriculas.php">Matriculas</a>
-            </div>
-            <!-- Columna 3 -->
-            <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
-            <div class="col-lg-6 col-md-12 text-end">
-                <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
-                    <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
-                </span>
-            </div>
-            <!-- Fin de la nueva sección para la cruz sin fondo -->
         </div>
     </div>
-</div>
-            <!-- Footer End -->
+    <!-- Footer End -->
 
 
 
-            <!-- Back to Top -->
-            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-            <!-- JavaScript Libraries -->
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="lib/wow/wow.min.js"></script>
-            <script src="lib/easing/easing.min.js"></script>
-            <script src="lib/waypoints/waypoints.min.js"></script>
-            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-            <!-- Template Javascript -->
-            <script src="js/main.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>

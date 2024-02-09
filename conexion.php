@@ -4,11 +4,11 @@ class Cconexion {
 
    public static function ConexionBD() {
 
-        $host = 'localhost';  // Cambiar a minúsculas
+        $host = 'localhost';  
         $dbname = 'ProyectoGestionBDDu1';
-        $username = 'root';  // Reemplazar con tu nombre de usuario de MySQL
-        $password = 'administrador';  // Reemplazar con tu contraseña de MySQL
-        $puerto = '3306';  // Puerto predeterminado para MySQL
+        $username = 'root';  
+        $password = 'administrador';  
+        $puerto = '3306';  
 
         try {
             $conn = new PDO("mysql:host=$host;port=$puerto;dbname=$dbname", $username, $password);

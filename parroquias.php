@@ -93,6 +93,7 @@ if ($conexion) {
     <!-- Spinner End -->
 
 
+
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -103,26 +104,25 @@ if ($conexion) {
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="vista.php" class="nav-item nav-link">Búsqueda</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Matrícula</a>
-                    <div class="dropdown-menu" aria-labelledby="matriculaDropdown">
-                        <a href="catequista.php" class="dropdown-item">CATEQUISTA</a>
-                        <a href="matriculas.php" class="dropdown-item">MATRÍCULAS</a>
-                        <a href="guias.php" class="dropdown-item">Guias Espirituales</a>
+                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">REGISTROS</a>
+                    <div class="dropdown-menu w-100" aria-labelledby="matriculaDropdown">
+                        <a href="aula.php" class="dropdown-item">Aulas</a>
+                        <a href="catequista.php" class="dropdown-item">Catequistas</a>
+                        <a href="matriculas.php" class="dropdown-item">Niños</a>
+                        <a href="guias.php" class="dropdown-item">Padres</a>
                         <a href="parroquias.php" class="dropdown-item">Parroquias</a>
+                        <a href="cursos.php" class="dropdown-item">Sacramentos</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
 
 
-    <!-- Header Start -->
     <!-- Header Start -->
     <div class="container-fluid bg-dark">
         <div class="container py-5">

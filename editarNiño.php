@@ -122,6 +122,7 @@ if (isset($_GET["id"])) {
         <!-- Spinner End -->
 
 
+
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
             <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -133,21 +134,25 @@ if (isset($_GET["id"])) {
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="parroquias.php" class="nav-item nav-link active">Parroquias</a>
-                    <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
-                    <a href="guias.php" class="nav-item nav-link">Guias Espirituales</a>
                     <a href="vista.php" class="nav-item nav-link">Búsqueda</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">REGISTROS</a>
+                        <div class="dropdown-menu w-100" aria-labelledby="matriculaDropdown">
+                            <a href="aula.php" class="dropdown-item">Aulas</a>
+                            <a href="catequista.php" class="dropdown-item">Catequistas</a>
+                            <a href="matriculas.php" class="dropdown-item">Niños</a>
+                            <a href="guias.php" class="dropdown-item">Padres</a>
+                            <a href="parroquias.php" class="dropdown-item">Parroquias</a>
+                            <a href="cursos.php" class="dropdown-item">Sacramentos</a>
+                        </div>
+                    </div>
                 </div>
-                <a href="catequista.php" class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">CATEQUISTA</a>
-
-                <a href="matriculas.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">MATRÍCULAS<i
-                        class="fa fa-arrow-right ms-3"></i></a>
-
             </div>
         </nav>
         <!-- Navbar End -->
 
-        <!-- Header Start -->
         <!-- Header Start -->
         <div class="container-fluid bg-dark">
             <div class="container py-5">
@@ -248,38 +253,38 @@ if (isset($_GET["id"])) {
 
 
                 <!-- matriculas End -->
-           <!-- Footer Start -->
-           <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-                <div class="container py-5">
-                    <!-- Primera fila -->
-                    <div class="row g-5">
-                        <!-- Columna 1 -->
-                        <div class="col-lg-3 col-md-6 text-center">
-                            <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
-                            <a class="btn btn-link" href="parroquias.php">Parroquias</a>
-                            <a class="btn btn-link" href="cursos.php">Sacramentos</a>
-                            <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+                <!-- Footer Start -->
+                <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="container py-5">
+                        <!-- Primera fila -->
+                        <div class="row g-5">
+                            <!-- Columna 1 -->
+                            <div class="col-lg-3 col-md-6 text-center">
+                                <h4 class="text-white mb-3">ACCESO RAPIDO</h4>
+                                <a class="btn btn-link" href="parroquias.php">Parroquias</a>
+                                <a class="btn btn-link" href="cursos.php">Sacramentos</a>
+                                <a class="btn btn-link" href="guias.php">Guias Espirituales</a>
+                            </div>
+                            <!-- Columna 2 -->
+                            <div class="col-lg-3 col-md-6 text-center">
+                                <br> <br>
+                                <a class="btn btn-link" href="vista.php">Búsqueda</a>
+                                <a class="btn btn-link" href="catequista.php">Catequistas</a>
+                                <a class="btn btn-link" href="matriculas.php">Matriculas</a>
+                            </div>
+                            <!-- Columna 3 -->
+                            <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
+                            <div class="col-lg-6 col-md-12 text-end">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
+                                    <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
+                                </span>
+                            </div>
+                            <!-- Fin de la nueva sección para la cruz sin fondo -->
                         </div>
-                        <!-- Columna 2 -->
-                        <div class="col-lg-3 col-md-6 text-center">
-                            <br> <br>
-                            <a class="btn btn-link" href="vista.php">Búsqueda</a>
-                            <a class="btn btn-link" href="catequista.php">Catequistas</a>
-                            <a class="btn btn-link" href="matriculas.php">Matriculas</a>
-                        </div>
-                        <!-- Columna 3 -->
-                        <!-- Aquí se incluirá la nueva sección para la cruz sin fondo -->
-                        <div class="col-lg-6 col-md-12 text-end">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x" style="color: transparent;"></i>
-                                <i class="fas fa-cross fa-stack-1x" style="color: white; font-size: 3rem;"></i>
-                            </span>
-                        </div>
-                        <!-- Fin de la nueva sección para la cruz sin fondo -->
                     </div>
                 </div>
-            </div>
-            <!-- Footer End -->
+                <!-- Footer End -->
 
 
 

@@ -1,9 +1,56 @@
+<?php
+include_once "conexion.php";
+
+// Manejar el envío del formulario
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
+    // Verificar si los datos del formulario están definidos
+    if (isset($_POST["nombre_sacramento"]) && isset($_POST["descripcion_sacramento"])) {
+        // Obtener los datos del formulario
+        $nombreSacramento = $_POST["nombre_sacramento"];
+        $descripcionSacramento = $_POST["descripcion_sacramento"];
+
+        try {
+            // Obtener la conexión
+            $conexion = Cconexion::ConexionBD();
+
+            // Preparar la llamada al procedimiento almacenado
+            $sql = "CALL AgregarSacramento(?, ?)";
+            $stmt = $conexion->prepare($sql);
+            $stmt->bindParam(1, $nombreSacramento, PDO::PARAM_STR);
+            $stmt->bindParam(2, $descripcionSacramento, PDO::PARAM_STR);
+
+            // Ejecutar la consulta
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        } finally {
+            // Cerrar la conexión
+            if ($conexion) {
+                $conexion = null;
+            }
+        }
+    } else {
+        echo "Error: Los datos del formulario son nulos.";
+    }
+}
+
+// Mostrar datos en la tabla
+$conexion = Cconexion::ConexionBD();
+
+if ($conexion) {
+    $sql = "SELECT * FROM Sacramento";
+    $resultado = $conexion->query($sql);
+} else {
+    echo "Error al cerrar la conexión";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Proyecto Gestion BDD</title>
+    <title>Sacramento</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -34,42 +81,46 @@
 </head>
 
 <body>
-    <?php
-    include_once("conexion.php");
-    // Crea una instancia de la clase Cconexion
-    $conexion = new Cconexion();
-    // Llama al método ConexionBD en la instancia creada
-    $conexion->ConexionBD();
-    ?>
+
+
     <!-- Spinner Start -->
-    <div id="spinner"
+    <!-- <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
-    </div>
+    </div> -->
     <!-- Spinner End -->
 
 
+
     <!-- Navbar Start -->
- <div class="collapse navbar-collapse" id="navbarCollapse">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>Iglesia Central</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="cursos.php" class="nav-item nav-link">Sacramentos</a>
                 <a href="vista.php" class="nav-item nav-link">Búsqueda</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Matrícula</a>
-                    <div class="dropdown-menu" aria-labelledby="matriculaDropdown">
-                        <a href="catequista.php" class="dropdown-item">CATEQUISTA</a>
-                        <a href="matriculas.php" class="dropdown-item">MATRÍCULAS</a>
-                        <a href="guias.php" class="dropdown-item">Guias Espirituales</a>
+                    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" id="matriculaDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">REGISTROS</a>
+                    <div class="dropdown-menu w-100" aria-labelledby="matriculaDropdown">
+                        <a href="aula.php" class="dropdown-item">Aulas</a>
+                        <a href="catequista.php" class="dropdown-item">Catequistas</a>
+                        <a href="matriculas.php" class="dropdown-item">Niños</a>
+                        <a href="guias.php" class="dropdown-item">Padres</a>
                         <a href="parroquias.php" class="dropdown-item">Parroquias</a>
+                        <a href="cursos.php" class="dropdown-item">Sacramentos</a>
                     </div>
                 </div>
-                
             </div>
         </div>
+    </nav>
     <!-- Navbar End -->
-
 
     <!-- Header Start -->
     <div class="container-fluid bg-dark">
@@ -77,7 +128,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
                     <br><br>
-                    <h1 class="mb-5 text-white">Sacramentos.</h1>
+                    <h1 class="mb-5 text-white">Sacramento.</h1>
                     <nav aria-label="breadcrumb">
 
                     </nav>
@@ -85,172 +136,88 @@
             </div>
         </div>
     </div>
-
-
     <!-- Header End -->
-
-    <!-- cursos Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">cursos</h6>
-                <h1 class="mb-5">Cursos Disponibles.</h1>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/añobiblicojpg.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-
-                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-
-                            <h5 class="mb-4">Año Biblico</h5>
-                            <p>El curso de año bíblico es un curso de formación cristiana que se centra en el estudio de
-                                la Biblia. El curso suele durar un año y se divide en diferentes temas, como la historia
-                                de la Biblia, sus personajes, sus enseñanzas y su mensaje. El curso está dirigido a
-                                personas de todas las edades y niveles de conocimiento bíblico.</p>
-                        </div>
-                        <div class="d-flex border-top">
-
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>Viernes 4:00 PM</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30
-                                Estudiantes</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/primeracomunion.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-
-                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-
-                            <h5 class="mb-4">Primera Comunión</h5>
-                            <p>El curso de primera comunión es un curso de formación cristiana que prepara a los niños
-                                para recibir la primera comunión. El curso suele durar un año y se centra en el estudio
-                                de la vida de Jesús, los sacramentos y la fe católica. El curso está dirigido a niños de
-                                entre 7 y 10 años.</p>
-                        </div>
-                        <div class="d-flex border-top">
-
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>Sábado 2:00 PM</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>25
-                                Estudiantes</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/conf4.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-
-                                <a href="matriculas.php" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">MATRÍCULAS</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-
-                            <h5 class="mb-4">Confirmacion</h5>
-                            <p>El curso de confirmación es un curso de formación cristiana que reafirma la fe de los
-                                jóvenes. El curso suele durar un año y se centra en el estudio de la fe católica, la
-                                vocación y la responsabilidad cristiana. El curso está dirigido a jóvenes de entre 11 y
-                                16 años.</p>
-                        </div>
-                        <div class="d-flex border-top">
-
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-clock text-primary me-2"></i>Domingo 10:00 AM</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>20
-                                Estudiantes</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- cursos End -->
 
 
     <!-- matriculas Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Testimonios</h6>
-                <h1 class="mb-5">Experiencias en los Sacramentos.</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">sacramento</h6>
+                <h1 class="mb-5">Ingreso Sacramento</h1>
             </div>
-            <div class="owl-carousel matriculas-carousel position-relative">
-                <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/bc.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Bryan Cruz</h5>
 
-                    <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Antes de empezar el curso de año bíblico, no sabía mucho sobre la Biblia. Solo
-                            había escuchado algunas historias de la escuela o de mis padres. Pero durante el curso,
-                            aprendí mucho sobre la historia de la Biblia, sus personajes y sus enseñanzas. También
-                            aprendí a leer la Biblia y a entender su mensaje.</p>
+            <!-- Formulario Sacramento -->
+            <form id="sacramento-form" action="cursos.php" method="POST" class="col-md-6 mx-auto">
+                <!-- Campos del formulario -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="nombre_sacramento" class="form-label">Nombre Sacramento:</label>
+                        <input type="text" id="nombre_sacramento" name="nombre_sacramento" class="form-control" required
+                            pattern="^[a-zA-Z\s]+$" title="Solo se permiten letras y espacios">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="descripcion_sacramento" class="form-label">Descripción Sacramento:</label>
+                        <input type="text" id="descripcion_sacramento" name="descripcion_sacramento"
+                            class="form-control" required pattern="^[a-zA-Z\s]+$"
+                            title="Solo se permiten letras y espacios">
                     </div>
                 </div>
-                <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/se.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Stefany Erazo</h5>
-
-                    <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">El día de mi primera comunión fue uno de los mejores días de mi vida. Estaba muy
-                            feliz de poder recibir a Jesús en mi corazón.</p>
-                    </div>
+                <div class="mb-3 text-center">
+                    <button type="submit" name="submit" class="btn btn-info text-white m-2">Agregar Sacramento</button>
                 </div>
-                <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/df.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">David Flores</h5>
+            </form>
 
-                    <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">La confirmación fue un momento muy importante para mí. Era la oportunidad de
-                            reafirmar mi fe y de comprometerme con la Iglesia.</p>
-                    </div>
-                </div>
-                <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/fa.png"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Fabricio Alama</h5>
 
-                    <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">"Los cursos de año bíblico, primera comunión y confirmación fueron una
-                            experiencia muy importante para mí. Me ayudaron a crecer como persona y como cristiana.</p>
-                    </div>
-                </div>
-                <div class="matriculas-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/ab.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Andrea Bravo</h5>
+            <!-- Mostrar los datos en la tabla -->
+            <div class="table-responsive">
+                <table id="tabla-sacramentos" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th class="text-center">Editar y Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sacramentos-list">
+                        <?php
+                        // Verificar si hay resultados antes de mostrar la tabla
+                        if ($resultado) {
+                            while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<tr> </tr>";
+                                echo "<td>" . $fila['nombre'] . "</td>";
+                                echo "<td>" . $fila['descripcion'] . "</td>";
+                                echo "<td class='text-center'>";
 
-                    <div class="matriculas-text bg-light text-center p-4">
-                        <p class="mb-0">Estoy muy agradecida por la oportunidad de haber participado en estos cursos. Me
-                            han ayudado a ser una mejor persona y a vivir mi fe de una manera más plena.</p>
-                    </div>
-                </div>
+
+                                // Botón Editar
+                                echo "<a class='btn btn-info rounded-circle mx-1' href='editarSacramento.php?id={$fila['id_sacramento']}' title='Editar'>
+                            <i class='bi bi-journal text-light'></i>
+                        </a>";
+
+                                // Botón Eliminar
+                                echo "<a class='btn btn-secondary rounded-circle mx-1' href='eliminarSacramento.php?id_sacramento={$fila['id_sacramento']}' 
+                            onclick='return confirm(\"¿Estás seguro de que deseas eliminar este registro?\")' title='Eliminar'>
+                            <i class='bi bi-x text-light'></i>
+                        </a>";
+
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='3'>No hay registros de sacramentos.</td></tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+
+
+
     <!-- matriculas End -->
 
-
-    <!-- Footer Start -->
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -285,6 +252,7 @@
     <!-- Footer End -->
 
 
+
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
@@ -302,3 +270,7 @@
 </body>
 
 </html>
+
+<?php
+$conexionBD = null;
+?>
