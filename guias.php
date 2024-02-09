@@ -199,7 +199,7 @@ if ($conexion) {
 
           <div class="col-md-12">
             <label for="correo" class="form-label">Correo Electrónico:</label>
-            <input type="text" id="correo" name="correo" class="form-control" title="Ingresa solo el número del ID"
+            <input type="text" id="correo" name="correo" class="form-control" title="Ingresa el correo"
               required>
           </div>
         </div>

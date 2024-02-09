@@ -77,7 +77,7 @@ if (isset($_GET["id"])) {
 
 <head>
     <meta charset="utf-8">
-    <title>Editar Niño</title>
+    <title>Editar Parroquias</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -159,7 +159,7 @@ if (isset($_GET["id"])) {
                 <div class="row justify-content-center">
                     <div class="col-lg-10 text-center">
                         <br><br>
-                        <h1 class="mb-5 text-white">Editar Matrícula.</h1>
+                        <h1 class="mb-5 text-white">Editar Parroquia</h1>
                         <nav aria-label="breadcrumb">
 
                         </nav>
@@ -175,7 +175,7 @@ if (isset($_GET["id"])) {
             <div class="container">
                 <div class="text-center">
                     <h6 class="section-title bg-white text-center text-primary px-3">edición</h6>
-                    <h1 class="mb-5">Niños Catecismo</h1>
+                    <h1 class="mb-5">Parroquias</h1>
                 </div>
 
                 <!-- Formulario de edición -->
